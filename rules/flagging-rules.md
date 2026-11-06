@@ -94,6 +94,23 @@ Gap: the standard says HPV-positive results follow Appendix 1, but Appendix 1 is
 
 Results must reach the patient within 15 working days (DoH breast standard, s.3.7.1).
 
+## Proposed rules (in code as v0.2, awaiting clinician review)
+
+These came out of writing the test cases. They're implemented so the benchmark runs end to end, and each one is marked PROPOSED in `workflows/flagging.js`.
+
+| Situation | Proposed handling | Test case |
+| --- | --- | --- |
+| Diastolic equal to or higher than systolic | Hard stop, IMPLAUSIBLE | TC40 |
+| Patient outside 18 to 75 | Still act on the result, add OUT_OF_SCOPE_AGE to the case | TC41 |
+| Cervical or mammogram result on a record that isn't female | Hard stop, INCONSISTENT | TC42 |
+| Same result sent twice | Second copy ignored (unique message ID in the database) | TC43 |
+| Random glucose 11.1 to 16.6 mmol/L | P2, in-person within 28 days (ADA uses random 11.1+ with symptoms) | TC56 |
+| Very low BP (e.g. 84/52) | No rule yet, no flag. Ask clinician | TC44 |
+
+## Deadlines used in code
+
+A case's deadline is the earliest one across all its findings. "Same day" means 23:59 Abu Dhabi time on the day the result arrived. "5 working days" is coded as 7 calendar days. "Next screening" is coded as 3 years, the IFHAS cycle.
+
 ## Out of scope for the prototype
 
 Lung cancer screening (Lung-RADS), full blood count, depression screening and the hearing and vision checks are part of the IFHAS packages, but they're left out to keep the build tight. Mention this in the limitations.
