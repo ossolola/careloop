@@ -1,0 +1,54 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc08",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC08",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-06T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc08-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "Patient/f5e11a7d-61f0-d761-1eed-ebdd096860c1"
+    },
+    "effectiveDateTime": "2026-11-06",
+    "valueQuantity": {
+     "value": 33.1,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  }
+ ]
+}

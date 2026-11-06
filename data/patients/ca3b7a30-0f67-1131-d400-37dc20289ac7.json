@@ -1,0 +1,382 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "record-ca3b7a30",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Patient",
+    "id": "ca3b7a30-0f67-1131-d400-37dc20289ac7",
+    "identifier": [
+     {
+      "system": "http://careloop.example/mrn",
+      "value": "CL-0050"
+     }
+    ],
+    "name": [
+     {
+      "family": "Schroeder",
+      "given": [
+       "Quinn"
+      ]
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1993-09-12",
+    "address": [
+     {
+      "city": "Abu Dhabi",
+      "district": "Khalifa City",
+      "country": "AE"
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/dr-08",
+      "display": "Dr Khalid Demo"
+     }
+    ],
+    "managingOrganization": {
+     "reference": "Organization/clinic-west",
+     "display": "Demo Family Clinic West"
+    },
+    "telecom": [
+     {
+      "system": "phone",
+      "value": "+971 50 000 0050"
+     },
+     {
+      "system": "email",
+      "value": "patient0050@example.com"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Coverage",
+    "id": "cov-ca3b7a30",
+    "status": "active",
+    "beneficiary": {
+     "reference": "Patient/ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "class": [
+     {
+      "type": {
+       "text": "plan"
+      },
+      "value": "plan-b",
+      "name": "Plan B (enhanced)"
+     },
+     {
+      "type": {
+       "text": "network"
+      },
+      "value": "net-b"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Consent",
+    "id": "consent-ca3b7a30",
+    "status": "rejected",
+    "scope": {
+     "text": "Contact about screening results"
+    },
+    "patient": {
+     "reference": "Patient/ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "provision": {
+     "type": "deny"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "ca3b7a30-0f67-1131-41c7-e7236c3da26d",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2021-11-21T07:41:44+01:00",
+    "valueQuantity": {
+     "value": 23.21,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "ca3b7a30-0f67-1131-1a66-dd758e64aeb0",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2021-11-21T07:41:44+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 86,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 110,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "ca3b7a30-0f67-1131-c3ce-46fa0e9ce0da",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2024-11-24T07:41:44+01:00",
+    "valueQuantity": {
+     "value": 24.55,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "ca3b7a30-0f67-1131-ede7-e9bee208fab1",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2024-11-24T07:41:44+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 87,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 113,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "ca3b7a30-0f67-1131-1e43-a9257fb6176a",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2024-11-24T07:41:44+01:00",
+    "valueQuantity": {
+     "value": 154.78,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "ca3b7a30-0f67-1131-224c-c33ef78f42f1",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2026-07-05T07:41:44+01:00",
+    "valueQuantity": {
+     "value": 25.14,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "ca3b7a30-0f67-1131-bb5b-f9b45b163762",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2026-07-05T07:41:44+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 93,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 107,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

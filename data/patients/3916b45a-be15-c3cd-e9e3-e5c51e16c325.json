@@ -1,0 +1,667 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "record-3916b45a",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Patient",
+    "id": "3916b45a-be15-c3cd-e9e3-e5c51e16c325",
+    "identifier": [
+     {
+      "system": "http://careloop.example/mrn",
+      "value": "CL-0065"
+     }
+    ],
+    "name": [
+     {
+      "family": "Fay",
+      "given": [
+       "Vincenza"
+      ]
+     }
+    ],
+    "gender": "female",
+    "birthDate": "2007-11-08",
+    "address": [
+     {
+      "city": "Abu Dhabi",
+      "district": "Khalifa City",
+      "country": "AE"
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/dr-03",
+      "display": "Dr Fatima Demo"
+     }
+    ],
+    "managingOrganization": {
+     "reference": "Organization/clinic-south",
+     "display": "Demo Family Clinic South"
+    },
+    "telecom": [
+     {
+      "system": "phone",
+      "value": "+971 50 000 0065"
+     },
+     {
+      "system": "email",
+      "value": "patient0065@example.com"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Coverage",
+    "id": "cov-3916b45a",
+    "status": "active",
+    "beneficiary": {
+     "reference": "Patient/3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "class": [
+     {
+      "type": {
+       "text": "plan"
+      },
+      "value": "plan-a",
+      "name": "Plan A (national)"
+     },
+     {
+      "type": {
+       "text": "network"
+      },
+      "value": "net-a"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Consent",
+    "id": "consent-3916b45a",
+    "status": "active",
+    "scope": {
+     "text": "Contact about screening results"
+    },
+    "patient": {
+     "reference": "Patient/3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "provision": {
+     "type": "permit"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "3916b45a-be15-c3cd-efb5-ed8183edecda",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "128188000",
+       "display": "Cerebral palsy (disorder)"
+      }
+     ],
+     "text": "Cerebral palsy (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "onsetDateTime": "2007-12-20T06:10:28+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "3916b45a-be15-c3cd-d8b4-78bc62d920c5",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "110359009",
+       "display": "Intellectual disability (disorder)"
+      }
+     ],
+     "text": "Intellectual disability (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "onsetDateTime": "2007-12-20T06:10:28+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "3916b45a-be15-c3cd-0c73-0f9e94ea07f3",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "157265008",
+       "display": "Dislocation of hip joint (disorder)"
+      }
+     ],
+     "text": "Dislocation of hip joint (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "onsetDateTime": "2007-12-20T06:10:28+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "3916b45a-be15-c3cd-bb2e-da68c4427a32",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "446096008",
+       "display": "Perennial allergic rhinitis (disorder)"
+      }
+     ],
+     "text": "Perennial allergic rhinitis (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "onsetDateTime": "2012-01-27T06:10:28+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "3916b45a-be15-c3cd-dc83-f5164d4ee496",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "233678006",
+       "display": "Childhood asthma (disorder)"
+      }
+     ],
+     "text": "Childhood asthma (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "onsetDateTime": "2012-08-02T06:10:28+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-53ca-03f548bf868d",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2021-12-09T06:10:28+01:00",
+    "valueQuantity": {
+     "value": 17.31,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-5503-014189ddf86a",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2021-12-09T06:10:28+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 76,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 150,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-3cfe-44e62ffe16ab",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2022-12-15T06:10:28+01:00",
+    "valueQuantity": {
+     "value": 18.52,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-d8ac-3413933c81be",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2022-12-15T06:10:28+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 76,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 136,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-ff9c-9d67dcccf0c0",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2023-12-21T06:10:28+01:00",
+    "valueQuantity": {
+     "value": 20.66,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-0cdf-16dc7303d2a7",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2023-12-21T06:10:28+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 73,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 136,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-b67a-975ce373404b",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2024-12-26T06:10:28+01:00",
+    "valueQuantity": {
+     "value": 21.19,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-0b6b-e2bdc3e65313",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2024-12-26T06:10:28+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 75,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 145,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-5182-a560e708044a",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2026-01-01T06:10:28+01:00",
+    "valueQuantity": {
+     "value": 21.22,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "3916b45a-be15-c3cd-e231-63fbf297bdd5",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:3916b45a-be15-c3cd-e9e3-e5c51e16c325"
+    },
+    "effectiveDateTime": "2026-01-01T06:10:28+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 83,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 139,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

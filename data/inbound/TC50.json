@@ -1,0 +1,54 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc50",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC50",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-03T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc50-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "14771-0",
+       "display": "Fasting glucose [Moles/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Fasting glucose [Moles/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "Patient/2842a581-1b45-015b-9110-87fef679cf13"
+    },
+    "effectiveDateTime": "2026-11-03",
+    "valueQuantity": {
+     "value": 21.0,
+     "unit": "mmol/L",
+     "system": "http://unitsofmeasure.org",
+     "code": "mmol/L"
+    }
+   }
+  }
+ ]
+}

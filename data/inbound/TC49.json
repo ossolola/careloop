@@ -1,0 +1,54 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc49",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC49",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-03T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc49-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "Patient/376bc6e9-b979-dacf-4a3f-28d40ed95227"
+    },
+    "effectiveDateTime": "2026-11-03",
+    "valueQuantity": {
+     "value": 310.0,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  }
+ ]
+}

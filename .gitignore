@@ -20,3 +20,4 @@ Thumbs.db
 
 # Never commit real patient data
 data/real/
+data/synthea/

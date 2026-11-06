@@ -1,0 +1,57 @@
+case_id,type,rule_status,description,sex,age,sbp,dbp,hba1c_pct,glucose,glucose_unit,glucose_kind,bmi,ldl_mmol,egfr,fit,cervical,mammogram,phone,consent,expected_status,expected_priority,expected_triggers,expected_route,expected_target,notes
+TC01,normal,covered,All results normal,M,45,118,76,5.2,,,,23.4,2.8,95,,,,yes,yes,no_flag,none,,none,next screening,
+TC02,normal,covered,Severe BP,M,45,192,118,,,,,,,,,,,yes,yes,flagged,P1,BP_SEVERE,same-day call,same day,
+TC03,normal,covered,Stage 2 BP,M,45,152,94,,,,,,,,,,,yes,yes,flagged,P2,BP_STAGE2,"in-person, family doctor",28 days,
+TC04,normal,covered,Stage 1 BP,M,45,134,84,,,,,,,,,,,yes,yes,flagged,P3,BP_STAGE1,teleconsult,90 days,
+TC05,normal,covered,Elevated BP only,M,45,124,76,,,,,,,,,,,yes,yes,flagged,P4,BP_ELEVATED,message + recall,next screening,
+TC06,normal,covered,Diabetes range HbA1c,M,45,,,7.4,,,,,,,,,,yes,yes,flagged,P2,A1C_DIABETES,"in-person, family doctor",28 days,
+TC07,normal,covered,Prediabetes HbA1c,M,45,,,6.0,,,,,,,,,,yes,yes,flagged,P3,A1C_PREDIABETES,teleconsult,90 days,
+TC08,normal,covered,Obesity,M,45,,,,,,,33.1,,,,,,yes,yes,flagged,P3,BMI_OBESE,teleconsult,90 days,
+TC09,normal,covered,Overweight,M,45,,,,,,,27.5,,,,,,yes,yes,flagged,P4,BMI_OVERWEIGHT,message + recall,next screening,
+TC10,normal,covered,Very high LDL,M,45,,,,,,,,5.3,,,,,yes,yes,flagged,P2,LDL_SEVERE,"in-person, family doctor",28 days,
+TC11,normal,covered,eGFR stage G3,M,45,,,,,,,,,48,,,,yes,yes,flagged,P3,EGFR_G3,teleconsult,repeat in 90 days,
+TC12,normal,covered,Positive FIT,M,55,,,,,,,,,,positive,,,yes,yes,flagged,P2,FIT_POS,colonoscopy referral,"60 days, escalate at 6 months",
+TC13,normal,covered,HPV positive,F,34,,,,,,,,,,,hpv_positive,,yes,yes,flagged,P2,HPV_POS,colposcopy referral,90 days; written result within 21 days,
+TC14,normal,covered,Mammogram BI-RADS 4,F,52,,,,,,,,,,,,birads_4,yes,yes,flagged,P2,MAMMO_SUSPICIOUS,breast assessment unit,5 working days,
+TC15,normal,covered,Mammogram BI-RADS 3,F,48,,,,,,,,,,,,birads_3,yes,yes,flagged,P4,MAMMO_SHORT_INTERVAL,message + recall,repeat imaging ~6 months,
+TC16,normal,covered,Khalid from the user story,M,48,156,94,7.4,,,,,,,,,,yes,yes,flagged,P2,BP_STAGE2; A1C_DIABETES,"in-person, family doctor",28 days,
+TC17,normal,covered,Severe hyperglycaemia,M,45,,,,18.2,mmol/L,random,,,,,,,yes,yes,flagged,P1,GLU_SEVERE,same-day call,same day,
+TC18,normal,covered,Visible cervical lesion,F,41,,,,,,,,,,,visible_lesion,,yes,yes,flagged,P1,CERVIX_LESION,gynae-oncology now,immediate,
+TC19,normal,covered,Unsatisfactory cervical sample,F,29,,,,,,,,,,,unsatisfactory,,yes,yes,flagged,P4,CERVIX_UNSAT,message + recall,repeat in 6 to 12 weeks,
+TC20,normal,covered,eGFR stage G4,M,45,,,,,,,,,22,,,,yes,yes,flagged,P2,EGFR_G4,"in-person, family doctor",14 days,
+TC21,hard,covered,BP exactly 180 systolic,M,45,180,100,,,,,,,,,,,yes,yes,flagged,P1,BP_SEVERE,same-day call,same day,boundary
+TC22,hard,covered,"BP 179/119, just under severe",M,45,179,119,,,,,,,,,,,yes,yes,flagged,P2,BP_STAGE2,"in-person, family doctor",28 days,boundary
+TC23,hard,covered,"Normal systolic, diastolic 80",M,45,118,80,,,,,,,,,,,yes,yes,flagged,P3,BP_STAGE1,teleconsult,90 days,diastolic alone triggers stage 1
+TC24,hard,covered,HbA1c exactly 6.5,M,45,,,6.5,,,,,,,,,,yes,yes,flagged,P2,A1C_DIABETES,"in-person, family doctor",28 days,boundary
+TC25,hard,covered,"HbA1c 5.6, just under prediabetes",M,45,,,5.6,,,,,,,,,,yes,yes,no_flag,none,,none,next screening,boundary
+TC26,hard,covered,BMI 29.9 vs 30,M,45,,,,,,,29.9,,,,,,yes,yes,flagged,P4,BMI_OVERWEIGHT,message + recall,next screening,boundary
+TC27,hard,covered,eGFR exactly 60,M,45,,,,,,,,,60,,,,yes,yes,no_flag,none,,none,next screening,boundary
+TC28,hard,covered,eGFR under 15,M,45,,,,,,,,,12,,,,yes,yes,flagged,P1,EGFR_G5,same-day call,same day,
+TC29,hard,covered,P3 obesity plus P2 BP: highest wins,M,45,148,92,,,,,31.5,,,,,,yes,yes,flagged,P2,BP_STAGE2; BMI_OBESE,"in-person, family doctor",28 days,all triggers listed on the case
+TC30,hard,covered,Positive FIT plus stage 2 BP: earliest deadline,M,60,150,88,,,,,,,,positive,,,yes,yes,flagged,P2,BP_STAGE2; FIT_POS,in-person + colonoscopy referral,"28 days (BP), 60 days (FIT)",
+TC31,hard,covered,Normal HbA1c but high fasting glucose,M,45,,,5.4,7.6,mmol/L,fasting,,,,,,,yes,yes,flagged,P2,GLU_FASTING_DIABETES,"in-person, family doctor",28 days,any one trigger is enough
+TC32,hard,covered,Glucose in mg/dL,M,45,,,,130,mg/dL,fasting,,,,,,,yes,yes,flagged,P2,GLU_FASTING_DIABETES,"in-person, family doctor",28 days,"130 mg/dL = 7.2 mmol/L, must convert"
+TC33,hard,covered,HbA1c value missing,M,45,,,,,,,,,,,,,yes,yes,stopped,none,MISSING_VALUE,data-check queue,n/a,"HbA1c test ordered, no value returned"
+TC34,hard,covered,Glucose with no unit,M,45,,,,7.8,,fasting,,,,,,,yes,yes,stopped,none,MISSING_UNIT,data-check queue,n/a,never guess the unit
+TC35,hard,covered,HbA1c sent as a fraction,M,45,,,0.074,,,,,,,,,,yes,yes,stopped,none,IMPLAUSIBLE,data-check queue,n/a,0.074 is outside 3 to 20%
+TC36,hard,covered,"BP typo, systolic 1520",M,45,1520,94,,,,,,,,,,,yes,yes,stopped,none,IMPLAUSIBLE,data-check queue,n/a,
+TC37,hard,covered,Patient record not matched,M,45,160,100,,,,,,,,,,,yes,yes,stopped,none,NO_MATCH,data-check queue,n/a,input has unknown patient ID; abnormal result must not be lost
+TC38,hard,covered,No phone number,M,45,158,96,,,,,,,,,,,no,yes,flagged,P2,BP_STAGE2,"in-person, family doctor",28 days,"case continues, contact flag for coordinator"
+TC39,hard,covered,Consent declined,M,45,,,8.1,,,,,,,,,,yes,no,flagged,P2,A1C_DIABETES,"coordinator follows up, no app messages",28 days,
+TC40,hard,gap,Diastolic higher than systolic,M,45,90,130,,,,,,,,,,,yes,yes,stopped,none,IMPLAUSIBLE,data-check queue,n/a,PROPOSED: add DBP >= SBP as a hard stop
+TC41,hard,gap,"Age 76, outside programme range",M,76,170,100,,,,,,,,,,,yes,yes,flagged,P2,BP_STAGE2; OUT_OF_SCOPE_AGE,"in-person, family doctor",28 days,"PROPOSED: still act on it, mark out of scope. Ask clinician"
+TC42,hard,gap,Cervical result on a male record,M,45,,,,,,,,,,,hpv_positive,,yes,yes,stopped,none,INCONSISTENT,data-check queue,n/a,PROPOSED: sex/test mismatch is a hard stop
+TC43,hard,gap,Same result sent twice,M,45,,,7.0,,,,,,,,,,yes,yes,flagged,P2,A1C_DIABETES,"in-person, family doctor",28 days,"PROPOSED: second copy is ignored, one case only"
+TC44,hard,gap,Very low BP,M,45,84,52,,,,,,,,,,,yes,yes,no_flag,none,,none,next screening,PROPOSED: no hypotension rule exists. Ask clinician
+TC45,hard,covered,BP just over severe,M,45,181,95,,,,,,,,,,,yes,yes,flagged,P1,BP_SEVERE,same-day call,same day,boundary
+TC46,hard,covered,Very high BP,M,45,210,115,,,,,,,,,,,yes,yes,flagged,P1,BP_SEVERE,same-day call,same day,
+TC47,hard,covered,Diastolic alone severe,M,45,150,120,,,,,,,,,,,yes,yes,flagged,P1,BP_SEVERE,same-day call,same day,diastolic 120 triggers P1 on its own
+TC48,hard,covered,Random glucose exactly 16.7,M,45,,,,16.7,mmol/L,random,,,,,,,yes,yes,flagged,P1,GLU_SEVERE,same-day call,same day,boundary
+TC49,hard,covered,Severe glucose in mg/dL,M,45,,,,310,mg/dL,random,,,,,,,yes,yes,flagged,P1,GLU_SEVERE,same-day call,same day,"310 mg/dL = 17.2 mmol/L, must convert"
+TC50,hard,covered,Severe fasting glucose,M,45,,,,21.0,mmol/L,fasting,,,,,,,yes,yes,flagged,P1,GLU_SEVERE,same-day call,same day,severe rule applies to any glucose
+TC51,hard,covered,eGFR 14,M,45,,,,,,,,,14,,,,yes,yes,flagged,P1,EGFR_G5,same-day call,same day,boundary
+TC52,hard,covered,Severe BP plus obesity: P1 wins,M,45,186,104,,,,,36.0,,,,,,yes,yes,flagged,P1,BP_SEVERE; BMI_OBESE,same-day call,same day,
+TC53,hard,covered,"Severe BP, no phone",M,45,195,122,,,,,,,,,,,no,yes,flagged,P1,BP_SEVERE,same-day call,same day,urgent and unreachable by phone: coordinator must find another way
+TC54,hard,covered,"Visible cervical lesion, consent declined",F,38,,,,,,,,,,,visible_lesion,,yes,no,flagged,P1,CERVIX_LESION,"gynae-oncology now, coordinator follows up",immediate,
+TC55,hard,covered,eGFR exactly 15,M,45,,,,,,,,,15,,,,yes,yes,flagged,P2,EGFR_G4,"in-person, family doctor",14 days,"boundary, must not be P1"
+TC56,hard,gap,High random glucose under severe,M,45,,,,16.6,mmol/L,random,,,,,,,yes,yes,flagged,P2,GLU_RANDOM_HIGH,"in-person, family doctor",28 days,PROPOSED: rules only cover random glucose at 16.7+. ADA uses random 11.1+ with symptoms. Ask clinician

@@ -1,0 +1,54 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc39",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC39",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-03T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc39-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ],
+     "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    "subject": {
+     "reference": "Patient/ca3b7a30-0f67-1131-d400-37dc20289ac7"
+    },
+    "effectiveDateTime": "2026-11-03",
+    "valueQuantity": {
+     "value": 8.1,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  }
+ ]
+}

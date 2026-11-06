@@ -1,0 +1,54 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc10",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC10",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-02T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc10-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "22748-8",
+       "display": "Cholesterol in LDL [Moles/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Cholesterol in LDL [Moles/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "Patient/265df444-f6a0-a1d9-8a35-eb1b4c154a1e"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "valueQuantity": {
+     "value": 5.3,
+     "unit": "mmol/L",
+     "system": "http://unitsofmeasure.org",
+     "code": "mmol/L"
+    }
+   }
+  }
+ ]
+}

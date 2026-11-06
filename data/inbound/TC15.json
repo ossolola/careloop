@@ -1,0 +1,51 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc15",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC15",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-06T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc15-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://careloop.example/codes",
+       "code": "mammogram-birads",
+       "display": "Screening mammogram BI-RADS category"
+      }
+     ],
+     "text": "Screening mammogram BI-RADS category"
+    },
+    "subject": {
+     "reference": "Patient/cc2a4e8b-738f-d83b-80e8-50ebd0bfcf57"
+    },
+    "effectiveDateTime": "2026-11-06",
+    "valueCodeableConcept": {
+     "text": "birads_3"
+    }
+   }
+  }
+ ]
+}

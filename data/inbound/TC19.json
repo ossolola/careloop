@@ -1,0 +1,51 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc19",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC19",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-06T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc19-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://careloop.example/codes",
+       "code": "cervical-screen",
+       "display": "Cervical screening result"
+      }
+     ],
+     "text": "Cervical screening result"
+    },
+    "subject": {
+     "reference": "Patient/c33cd3c0-b4b5-5b3a-e7bc-e4b6891241ee"
+    },
+    "effectiveDateTime": "2026-11-06",
+    "valueCodeableConcept": {
+     "text": "unsatisfactory"
+    }
+   }
+  }
+ ]
+}

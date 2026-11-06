@@ -12,6 +12,9 @@ Notes on what I'm assuming as I build. Will tidy this into the final assumptions
 - Malaffi and Sahatna are mocked for now. I don't have access to them. The data follows FHIR so a real connection later should be manageable.
 - Abnormal results are flagged with fixed rules, not AI. Gemini only writes the messages patients read. I want the flagging to be something a doctor can check line by line.
 
+6 Nov
+- generated 70 patients with Synthea, seed 2026, ages 18 to 75. Synthea’s population data is US-based, so names and addresses are American. Abu Dhabi details (insurance plan, family doctor, clinic) are added on top.
+
 ## Dependencies
 
 - n8n (self-hosted). Needs to be reachable online so the judges can test it.

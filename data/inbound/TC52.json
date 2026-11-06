@@ -1,0 +1,121 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc52",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC52",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-02T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc52-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel"
+      }
+     ],
+     "text": "Blood pressure panel"
+    },
+    "subject": {
+     "reference": "Patient/99079aaf-2678-f515-4ed7-eb6ab347f04c"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic blood pressure"
+        }
+       ]
+      },
+      "valueQuantity": {
+       "value": 186.0,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic blood pressure"
+        }
+       ]
+      },
+      "valueQuantity": {
+       "value": 104.0,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc52-2",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "Patient/99079aaf-2678-f515-4ed7-eb6ab347f04c"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "valueQuantity": {
+     "value": 36.0,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  }
+ ]
+}

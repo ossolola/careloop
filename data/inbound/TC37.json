@@ -1,0 +1,84 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc37",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC37",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-06T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc37-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel"
+      }
+     ],
+     "text": "Blood pressure panel"
+    },
+    "subject": {
+     "reference": "Patient/00000000-0000-0000-0000-000000000000"
+    },
+    "effectiveDateTime": "2026-11-06",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic blood pressure"
+        }
+       ]
+      },
+      "valueQuantity": {
+       "value": 100.0,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic blood pressure"
+        }
+       ]
+      },
+      "valueQuantity": {
+       "value": 160.0,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

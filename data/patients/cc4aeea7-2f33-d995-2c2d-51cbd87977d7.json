@@ -1,0 +1,183 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "record-cc4aeea7",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Patient",
+    "id": "cc4aeea7-2f33-d995-2c2d-51cbd87977d7",
+    "identifier": [
+     {
+      "system": "http://careloop.example/mrn",
+      "value": "CL-0030"
+     }
+    ],
+    "name": [
+     {
+      "family": "Esquibel",
+      "given": [
+       "In\u00e9s"
+      ]
+     }
+    ],
+    "gender": "female",
+    "birthDate": "2001-10-10",
+    "address": [
+     {
+      "city": "Abu Dhabi",
+      "district": "Al Bateen",
+      "country": "AE"
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/dr-01",
+      "display": "Dr Noura Demo"
+     }
+    ],
+    "managingOrganization": {
+     "reference": "Organization/clinic-north",
+     "display": "Demo Family Clinic North"
+    },
+    "telecom": [
+     {
+      "system": "phone",
+      "value": "+971 50 000 0030"
+     },
+     {
+      "system": "email",
+      "value": "patient0030@example.com"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Coverage",
+    "id": "cov-cc4aeea7",
+    "status": "active",
+    "beneficiary": {
+     "reference": "Patient/cc4aeea7-2f33-d995-2c2d-51cbd87977d7"
+    },
+    "class": [
+     {
+      "type": {
+       "text": "plan"
+      },
+      "value": "plan-c",
+      "name": "Plan C (basic)"
+     },
+     {
+      "type": {
+       "text": "network"
+      },
+      "value": "net-c"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Consent",
+    "id": "consent-cc4aeea7",
+    "status": "active",
+    "scope": {
+     "text": "Contact about screening results"
+    },
+    "patient": {
+     "reference": "Patient/cc4aeea7-2f33-d995-2c2d-51cbd87977d7"
+    },
+    "provision": {
+     "type": "permit"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "cc4aeea7-2f33-d995-e304-95d174df3b84",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:cc4aeea7-2f33-d995-2c2d-51cbd87977d7"
+    },
+    "effectiveDateTime": "2023-12-13T03:16:49+01:00",
+    "valueQuantity": {
+     "value": 21.73,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "cc4aeea7-2f33-d995-0cc9-64103ba49ce8",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:cc4aeea7-2f33-d995-2c2d-51cbd87977d7"
+    },
+    "effectiveDateTime": "2023-12-13T03:16:49+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 85,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 112,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

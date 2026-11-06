@@ -1,0 +1,51 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc42",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC42",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-02T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc42-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://careloop.example/codes",
+       "code": "cervical-screen",
+       "display": "Cervical screening result"
+      }
+     ],
+     "text": "Cervical screening result"
+    },
+    "subject": {
+     "reference": "Patient/8b094dd1-cb19-f538-ca1c-045c8ae1b018"
+    },
+    "effectiveDateTime": "2026-11-02",
+    "valueCodeableConcept": {
+     "text": "hpv_positive"
+    }
+   }
+  }
+ ]
+}

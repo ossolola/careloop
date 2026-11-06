@@ -1,0 +1,51 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "inbound-tc12",
+ "meta": {
+  "tag": [
+   {
+    "system": "http://careloop.example/codes",
+    "code": "TC12",
+    "display": "benchmark test case"
+   }
+  ]
+ },
+ "timestamp": "2026-11-04T09:00:00+04:00",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "tc12-1",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://careloop.example/codes",
+       "code": "fit",
+       "display": "Faecal immunochemical test"
+      }
+     ],
+     "text": "Faecal immunochemical test"
+    },
+    "subject": {
+     "reference": "Patient/d965c8bb-2dcf-ad64-32d4-a92ae9872293"
+    },
+    "effectiveDateTime": "2026-11-04",
+    "valueCodeableConcept": {
+     "text": "positive"
+    }
+   }
+  }
+ ]
+}

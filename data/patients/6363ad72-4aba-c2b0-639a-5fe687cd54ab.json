@@ -1,0 +1,1536 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "record-6363ad72",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Patient",
+    "id": "6363ad72-4aba-c2b0-639a-5fe687cd54ab",
+    "identifier": [
+     {
+      "system": "http://careloop.example/mrn",
+      "value": "CL-0020"
+     }
+    ],
+    "name": [
+     {
+      "family": "Feil",
+      "given": [
+       "Eunice"
+      ]
+     }
+    ],
+    "gender": "female",
+    "birthDate": "1973-02-15",
+    "address": [
+     {
+      "city": "Abu Dhabi",
+      "district": "Al Bateen",
+      "country": "AE"
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/dr-08",
+      "display": "Dr Khalid Demo"
+     }
+    ],
+    "managingOrganization": {
+     "reference": "Organization/clinic-west",
+     "display": "Demo Family Clinic West"
+    },
+    "telecom": [
+     {
+      "system": "phone",
+      "value": "+971 50 000 0020"
+     },
+     {
+      "system": "email",
+      "value": "patient0020@example.com"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Coverage",
+    "id": "cov-6363ad72",
+    "status": "active",
+    "beneficiary": {
+     "reference": "Patient/6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "class": [
+     {
+      "type": {
+       "text": "plan"
+      },
+      "value": "plan-c",
+      "name": "Plan C (basic)"
+     },
+     {
+      "type": {
+       "text": "network"
+      },
+      "value": "net-c"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Consent",
+    "id": "consent-6363ad72",
+    "status": "active",
+    "scope": {
+     "text": "Contact about screening results"
+    },
+    "patient": {
+     "reference": "Patient/6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "provision": {
+     "type": "permit"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "6363ad72-4aba-c2b0-6d22-e5cdd2e02f15",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "91302008",
+       "display": "Sepsis (disorder)"
+      }
+     ],
+     "text": "Sepsis (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "onsetDateTime": "1997-05-14T02:52:58+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "6363ad72-4aba-c2b0-d9bf-9f0b724ca329",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "40055000",
+       "display": "Chronic sinusitis (disorder)"
+      }
+     ],
+     "text": "Chronic sinusitis (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "onsetDateTime": "2002-07-29T21:52:58+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "6363ad72-4aba-c2b0-da93-927775000cf4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "87433001",
+       "display": "Pulmonary emphysema (disorder)"
+      }
+     ],
+     "text": "Pulmonary emphysema (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "onsetDateTime": "2013-02-15T02:52:58+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "6363ad72-4aba-c2b0-0d38-716eb6d68ee4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "427419006",
+       "display": "Transformed migraine (disorder)"
+      }
+     ],
+     "text": "Transformed migraine (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "onsetDateTime": "2014-02-01T02:52:58+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "6363ad72-4aba-c2b0-b394-a7af5da08863",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "55822004",
+       "display": "Hyperlipidemia (disorder)"
+      }
+     ],
+     "text": "Hyperlipidemia (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "onsetDateTime": "2017-03-16T02:52:58+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-a634-3fcb3077b76b",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ],
+     "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-01-20T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 5.81,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-d483-8d03bfb0c602",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-01-20T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 30.37,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-edf9-21f93cfdb4b5",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-01-20T02:52:58+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 87,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 106,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-54c3-2f498c921ac0",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-01-20T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 71.07,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-29a8-3065bb04eb18",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ],
+     "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-04-14T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 6.34,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-0121-592bf0e536ce",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-04-14T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 30.37,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-6a43-a98d10452b6c",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-04-14T02:52:58+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 93,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 107,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-6159-7a85fcf6356c",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-04-14T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 82.36,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-2a05-588f3bded5df",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-04-29T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 69.74,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-2be0-a7b43fc47d61",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-04-29T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 80.608,
+     "unit": "mL/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-7081-d80abd7bcbe9",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2022-04-29T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 125.99,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-b957-32281e082276",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ],
+     "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-04-20T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 6.22,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-16d2-0e946ba6f28c",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-04-20T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 30.37,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-801a-ffa6230854f2",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-04-20T02:52:58+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 87,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 105,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-7036-7eeb1a516a06",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-04-20T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 68.1,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-7751-1f0aa3fd4351",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-04-20T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 90.66,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-fc85-625917acb420",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-05-11T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 79.37,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-a182-692a4d1b882d",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-05-11T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 77.493,
+     "unit": "mL/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-9441-bcfa516173d3",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2023-05-11T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 107.37,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-0775-879571d339ee",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ],
+     "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2024-04-25T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 6.25,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-c66e-01563f3eff64",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2024-04-25T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 27.95,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-2c76-875646f24122",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2024-04-25T02:52:58+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 88,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 119,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-756d-c5c1241d0f09",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2024-04-25T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 69.7,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-f8d7-39e5c216ee3c",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2024-05-10T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 96.74,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-14fd-6bf7b6e584a2",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2024-05-10T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 84.708,
+     "unit": "mL/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-f149-4658b0dd00b8",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2024-05-10T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 106.74,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-66ef-d1bcd4c29d34",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ],
+     "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2025-05-01T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 6.06,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-b4eb-a43995ded00d",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2025-05-01T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 28.56,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-9592-133e01cf2659",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2025-05-01T02:52:58+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 87,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 112,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-d074-df210d482eed",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2025-05-01T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 86.22,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-b489-f3f2cdce8bcd",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2025-05-22T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 93.59,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-b7db-a820daff0bb2",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2025-05-22T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 70.262,
+     "unit": "mL/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-e785-56a2a719d848",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2025-05-22T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 107.78,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-e73c-aedb1a802672",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4548-4",
+       "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+      }
+     ],
+     "text": "Hemoglobin A1c/Hemoglobin.total in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-07T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 5.88,
+     "unit": "%",
+     "system": "http://unitsofmeasure.org",
+     "code": "%"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-0334-4392003fb82b",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-07T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 29.18,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-ca99-49ed6eed2e8d",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-07T02:52:58+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 88,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 104,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-b243-f546e62e27a6",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-07T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 90.32,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-3ed7-990c805c52bd",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-07T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 81.8,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-e8cd-8744085e4944",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2339-0",
+       "display": "Glucose [Mass/volume] in Blood"
+      }
+     ],
+     "text": "Glucose [Mass/volume] in Blood"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-22T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 94.9,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-c587-dc0170a4b503",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-22T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 79.34,
+     "unit": "mL/min",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "6363ad72-4aba-c2b0-07d9-c2b9e3747504",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:6363ad72-4aba-c2b0-639a-5fe687cd54ab"
+    },
+    "effectiveDateTime": "2026-05-22T02:52:58+01:00",
+    "valueQuantity": {
+     "value": 99.978,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  }
+ ]
+}

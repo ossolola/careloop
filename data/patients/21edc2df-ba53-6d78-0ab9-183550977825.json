@@ -1,0 +1,1969 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "id": "record-21edc2df",
+ "entry": [
+  {
+   "resource": {
+    "resourceType": "Patient",
+    "id": "21edc2df-ba53-6d78-0ab9-183550977825",
+    "identifier": [
+     {
+      "system": "http://careloop.example/mrn",
+      "value": "CL-0019"
+     }
+    ],
+    "name": [
+     {
+      "family": "Sedillo",
+      "given": [
+       "Emilio"
+      ]
+     }
+    ],
+    "gender": "male",
+    "birthDate": "1963-03-07",
+    "address": [
+     {
+      "city": "Abu Dhabi",
+      "district": "Mohammed Bin Zayed City",
+      "country": "AE"
+     }
+    ],
+    "generalPractitioner": [
+     {
+      "reference": "Practitioner/dr-02",
+      "display": "Dr Omar Demo"
+     }
+    ],
+    "managingOrganization": {
+     "reference": "Organization/clinic-north",
+     "display": "Demo Family Clinic North"
+    },
+    "telecom": [
+     {
+      "system": "phone",
+      "value": "+971 50 000 0019"
+     },
+     {
+      "system": "email",
+      "value": "patient0019@example.com"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Coverage",
+    "id": "cov-21edc2df",
+    "status": "active",
+    "beneficiary": {
+     "reference": "Patient/21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "class": [
+     {
+      "type": {
+       "text": "plan"
+      },
+      "value": "plan-b",
+      "name": "Plan B (enhanced)"
+     },
+     {
+      "type": {
+       "text": "network"
+      },
+      "value": "net-b"
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Consent",
+    "id": "consent-21edc2df",
+    "status": "active",
+    "scope": {
+     "text": "Contact about screening results"
+    },
+    "patient": {
+     "reference": "Patient/21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "provision": {
+     "type": "permit"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-5860-6ed779b99b2e",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "40055000",
+       "display": "Chronic sinusitis (disorder)"
+      }
+     ],
+     "text": "Chronic sinusitis (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "1999-02-13T04:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-25f3-c9807252f706",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "203082005",
+       "display": "Fibromyalgia (disorder)"
+      }
+     ],
+     "text": "Fibromyalgia (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "2014-02-01T03:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-fbde-8a26c261635f",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "59621000",
+       "display": "Essential hypertension (disorder)"
+      }
+     ],
+     "text": "Essential hypertension (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "2019-04-11T03:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-d47a-439b7648121f",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "431855005",
+       "display": "Chronic kidney disease stage 1 (disorder)"
+      }
+     ],
+     "text": "Chronic kidney disease stage 1 (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "2021-04-22T03:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-feaa-a61f5a48bc0b",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "127013003",
+       "display": "Disorder of kidney due to diabetes mellitus (disorder)"
+      }
+     ],
+     "text": "Disorder of kidney due to diabetes mellitus (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "2021-04-22T03:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-b173-56c0383c7c66",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "431856006",
+       "display": "Chronic kidney disease stage 2 (disorder)"
+      }
+     ],
+     "text": "Chronic kidney disease stage 2 (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "2022-04-28T03:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-355b-aef9ed7043d6",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "90781000119102",
+       "display": "Microalbuminuria due to type 2 diabetes mellitus (disorder)"
+      }
+     ],
+     "text": "Microalbuminuria due to type 2 diabetes mellitus (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "2022-04-28T03:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-4431-7ac161ec78e5",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-04-28T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 1.8332,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-0794-83d70335e8ad",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-04-28T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 61.881,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-f258-b6130b4ae68b",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-04-28T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 28.17,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-8384-d4465a11fea5",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-04-28T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 104,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 144,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-c8f8-5af218cd6c62",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-04-28T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 137.07,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-b7b6-9935853da486",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-09-22T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0435,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-43bb-f3f63217db6f",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-09-22T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 60.249,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-b255-3eca518adc23",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-09-22T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 28.11,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-f8d6-1b06a78985d7",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2022-09-22T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 108,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 133,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Condition",
+    "id": "21edc2df-ba53-6d78-eaae-481092df5a13",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "64859006",
+       "display": "Osteoporosis (disorder)"
+      }
+     ],
+     "text": "Osteoporosis (disorder)"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "onsetDateTime": "2023-05-04T03:19:20+01:00"
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-cf64-95ba32e88a3f",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-05-04T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0656,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-ae91-b3749b66b58f",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-05-04T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 62.159,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-6d04-97436e15d6f7",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-05-04T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 28.51,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-2b01-f9eeb8d3a6fc",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-05-04T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 106,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 134,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-c9be-bb7fd10e54c4",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-07-20T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0097,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-5768-ecbb6475d3c5",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-07-20T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 62.694,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-9ecf-d15de11d4a10",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-07-20T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 28.65,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-4db5-8a4d3ef97dd6",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2023-07-20T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 99,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 149,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-84e5-53e6660cd39d",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-01-11T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0407,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-6e1a-a9a836271868",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-01-11T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 80.078,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-5909-143f8cbb6f79",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-01-11T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 28.96,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-152c-e5e8037641db",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-01-11T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 106,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 134,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-7632-72b983e8da0e",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-05-09T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0849,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-143b-346996bc911a",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-05-09T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 63.42,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-0950-95b223ef147f",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-05-09T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 29.18,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-537a-08010790f758",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-05-09T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 102,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 138,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-8ba8-0c537afd80e2",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-10-10T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0572,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-3345-1b58ed98659b",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-10-10T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 71.718,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-6605-d31bcd1a9ba5",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-10-10T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 29.45,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-5d78-df7a4abd1e3a",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2024-10-10T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 98,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 140,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-edc7-133022f5d164",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-04-10T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0733,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-7203-a0ca6546976b",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-04-10T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 79.111,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-6d75-ec8fb2ffd883",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-04-10T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 29.78,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-e284-3efdd0df633f",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-04-10T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 100,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 140,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-e5b6-01be6f8f2cd5",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-05-08T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 1.8938,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-00bb-5f51f5fbd1fa",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-05-08T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 88.503,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-d619-2bda0b410cb7",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-05-08T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 29.83,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-67dd-e9d21cda854a",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-05-08T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 102,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 142,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-a398-1e5628020162",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "18262-6",
+       "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+      }
+     ],
+     "text": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-05-08T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 101.44,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-9231-6234e980a2c9",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-05-15T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 2.0427,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-c122-84571a725ce1",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2025-05-15T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 66.115,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-3d3b-a9f93cdb29fc",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-01-29T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 1.8988,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-ebc7-a1bbd896d1dc",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-01-29T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 81.35,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-66ee-bdc8768082e2",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-01-29T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 30.31,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-a502-100d979ac541",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-01-29T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 105,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 133,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-dcc0-cf56860f90cb",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2160-0",
+       "display": "Creatinine [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatinine [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-05-21T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 1.9317,
+     "unit": "mg/dL",
+     "system": "http://unitsofmeasure.org",
+     "code": "mg/dL"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-0d16-a1962e151df8",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "33914-3",
+       "display": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+      }
+     ],
+     "text": "Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-05-21T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 68.137,
+     "unit": "mL/min/{1.73_m2}",
+     "system": "http://unitsofmeasure.org",
+     "code": "mL/min/{1.73_m2}"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-74d9-03b07777eb79",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "39156-5",
+       "display": "Body mass index (BMI) [Ratio]"
+      }
+     ],
+     "text": "Body mass index (BMI) [Ratio]"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-05-21T03:19:20+01:00",
+    "valueQuantity": {
+     "value": 30.51,
+     "unit": "kg/m2",
+     "system": "http://unitsofmeasure.org",
+     "code": "kg/m2"
+    }
+   }
+  },
+  {
+   "resource": {
+    "resourceType": "Observation",
+    "id": "21edc2df-ba53-6d78-fc9b-6729ddc40029",
+    "status": "final",
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "85354-9",
+       "display": "Blood pressure panel with all children optional"
+      }
+     ],
+     "text": "Blood pressure panel with all children optional"
+    },
+    "subject": {
+     "reference": "urn:uuid:21edc2df-ba53-6d78-0ab9-183550977825"
+    },
+    "effectiveDateTime": "2026-05-21T03:19:20+01:00",
+    "component": [
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8462-4",
+         "display": "Diastolic Blood Pressure"
+        }
+       ],
+       "text": "Diastolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 99,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     },
+     {
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "8480-6",
+         "display": "Systolic Blood Pressure"
+        }
+       ],
+       "text": "Systolic Blood Pressure"
+      },
+      "valueQuantity": {
+       "value": 134,
+       "unit": "mm[Hg]",
+       "system": "http://unitsofmeasure.org",
+       "code": "mm[Hg]"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

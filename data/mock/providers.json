@@ -1,0 +1,33 @@
+{
+  "_note": "Mock data for the prototype. Clinic, doctor and plan names are made up. In a pilot this comes from the insurer and the facility directory.",
+  "plans": [
+    {"id": "plan-a", "name": "Plan A (national)", "network": "net-a"},
+    {"id": "plan-b", "name": "Plan B (enhanced)", "network": "net-b"},
+    {"id": "plan-c", "name": "Plan C (basic)", "network": "net-c"}
+  ],
+  "clinics": [
+    {"id": "clinic-north", "name": "Demo Family Clinic North", "area": "Khalifa City", "networks": ["net-a", "net-b", "net-c"]},
+    {"id": "clinic-south", "name": "Demo Family Clinic South", "area": "Mussafah", "networks": ["net-a", "net-c"]},
+    {"id": "clinic-east", "name": "Demo Family Clinic East", "area": "Al Shamkha", "networks": ["net-a", "net-b"]},
+    {"id": "clinic-west", "name": "Demo Family Clinic West", "area": "Al Bateen", "networks": ["net-b", "net-c"]}
+  ],
+  "practitioners": [
+    {"id": "dr-01", "name": "Dr Noura Demo", "role": "family-doctor", "clinic": "clinic-north"},
+    {"id": "dr-02", "name": "Dr Omar Demo", "role": "family-doctor", "clinic": "clinic-north"},
+    {"id": "dr-03", "name": "Dr Fatima Demo", "role": "family-doctor", "clinic": "clinic-south"},
+    {"id": "dr-04", "name": "Dr Yusuf Demo", "role": "family-doctor", "clinic": "clinic-south"},
+    {"id": "dr-05", "name": "Dr Mariam Demo", "role": "family-doctor", "clinic": "clinic-east"},
+    {"id": "dr-06", "name": "Dr Hassan Demo", "role": "family-doctor", "clinic": "clinic-east"},
+    {"id": "dr-07", "name": "Dr Aisha Demo", "role": "family-doctor", "clinic": "clinic-west"},
+    {"id": "dr-08", "name": "Dr Khalid Demo", "role": "family-doctor", "clinic": "clinic-west"}
+  ],
+  "services": [
+    {"id": "svc-teleconsult", "name": "Demo Teleconsultation Service", "type": "teleconsult", "networks": ["net-a", "net-b", "net-c"]},
+    {"id": "svc-gastro-1", "name": "Demo Endoscopy Unit", "type": "colonoscopy", "networks": ["net-a", "net-b"]},
+    {"id": "svc-gastro-2", "name": "Demo Day Surgery Centre", "type": "colonoscopy", "networks": ["net-c"]},
+    {"id": "svc-colpo", "name": "Demo Women's Health Clinic", "type": "colposcopy", "networks": ["net-a", "net-b", "net-c"]},
+    {"id": "svc-gynonc", "name": "Demo Gynae-Oncology Unit", "type": "gynae-oncology", "networks": ["net-a", "net-b", "net-c"]},
+    {"id": "svc-breast", "name": "Demo Breast Assessment Unit", "type": "breast-assessment", "networks": ["net-a", "net-b"]},
+    {"id": "svc-breast-2", "name": "Demo Imaging Centre", "type": "breast-assessment", "networks": ["net-c"]}
+  ]
+}
