@@ -246,7 +246,7 @@ function loginView() {
     <label for="pin">PIN</label><input id="pin" type="password" inputmode="numeric" autocomplete="off" required>
     <button class="btn" ${S.busy ? 'disabled' : ''}>${S.busy ? 'Signing in…' : 'Sign in'}</button>
     ${S.loginError ? `<div class="err">${esc(S.loginError)}</div>` : ''}
-    <p class="hint">Demo PIN: <span class="mono">2026</span>. Sign in as Layla to see the coordinator view, or as a doctor to approve messages and close cases. A real rollout would use the clinic's staff sign-on.</p>
+    <p class="hint">Demo PIN: <span class="mono">2026</span>. Sign in as Layla to see every case as the coordinator, or as a doctor to see only your own patients, approve their messages and close their cases. A real rollout would use the clinic's staff sign-on.</p>
   </form></div>`;
 }
 
@@ -390,7 +390,7 @@ function detailHtml() {
 
 function mainView() {
   const o = S.ov;
-  const navBtns = VIEWS.map(([k, label, count, hot], i) => {
+  const navBtns = VIEWS.filter(v => v[0] !== 'data' || !isDoctor()).map(([k, label, count, hot], i) => {
     const n = count(o);
     return (i === 4 ? '<hr>' : '') + `<button class="${S.view === k ? 'on' : ''}" data-view="${k}">${label}<span class="count ${hot && n ? 'hot' : ''}">${n}</span></button>`;
   }).join('');
@@ -400,7 +400,7 @@ function mainView() {
   else { const l = listFor(S.view, o); list = l.length ? `<ul class="rows">${l.map(rowHtml).join('')}</ul>` : `<div class="empty">Nothing here right now.</div>`; }
   const title = VIEWS.find(v => v[0] === S.view)[1];
   const sub = { approvals: 'Drafts wait here until a family doctor approves them', urgent: 'Same-day action needed', escalated: 'Patients the system could not move on its own',
-    overdue: 'Deadline has passed', open: 'Every case still in the loop', closed: 'Most recent 30', data: 'Results the rules refused to guess about' }[S.view];
+    overdue: 'Deadline has passed', open: isDoctor() ? 'Your patients still in the loop' : 'Every case still in the loop', closed: isDoctor() ? 'Your patients, most recent 30' : 'Most recent 30', data: 'Results the rules refused to guess about' }[S.view];
   return `<div class="top"><div class="brand">${LOGO}CareLoop <small>Care team</small></div><div class="spacer"></div>
       ${o.demo_mode ? '<span class="badge-demo">DEMO CLOCK: 1 DAY = 1 MIN</span>' : ''}
       <div class="who"><strong>${esc(o.me.name)}</strong>${o.me.role === 'coordinator' ? 'Screening coordinator' : 'Family doctor'}</div>
