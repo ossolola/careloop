@@ -170,7 +170,7 @@ begin
   -- 7. Urgent cases not dealt with by the end of the day, and any deadline that has passed
   for c in
     select id, priority from cases
-     where status in ('referred', 'notified', 'booked') and due_at < now()
+     where status in ('new', 'referred', 'notified', 'booked') and due_at < now()
   loop
     perform escalate_case(c.id, case when c.priority = 'P1' then 'Urgent case not actioned by end of day' else 'Deadline passed' end);
     v_esc := v_esc + 1;
