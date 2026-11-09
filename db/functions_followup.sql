@@ -167,10 +167,11 @@ begin
     v_esc := v_esc + 1;
   end loop;
 
-  -- 7. Urgent cases not dealt with by the end of the day, and any deadline that has passed
+  -- 7. Urgent cases not dealt with by the end of the day, and any deadline that has passed.
+  --    Booked cases are left out: an appointment exists, and step 6 catches it if the patient misses it.
   for c in
     select id, priority from cases
-     where status in ('new', 'referred', 'notified', 'booked') and due_at < now()
+     where status in ('new', 'referred', 'notified') and due_at < now()
   loop
     perform escalate_case(c.id, case when c.priority = 'P1' then 'Urgent case not actioned by end of day' else 'Deadline passed' end);
     v_esc := v_esc + 1;
@@ -276,6 +277,15 @@ begin
 end $$;
 
 
+-- Internal helpers: only other CareLoop functions use these, never the API directly
+revoke all on function setting(text) from public, anon, authenticated;
+revoke all on function followup_day() from public, anon, authenticated;
+revoke all on function fmt_date(timestamptz) from public, anon, authenticated;
+revoke all on function escalate_case(bigint, text) from public, anon, authenticated;
+grant execute on function setting(text) to service_role;
+grant execute on function followup_day() to service_role;
+grant execute on function fmt_date(timestamptz) to service_role;
+grant execute on function escalate_case(bigint, text) to service_role;
 revoke all on function run_followups() from public, anon, authenticated;
 revoke all on function record_alert(bigint, text, text, text) from public, anon, authenticated;
 revoke all on function approve_message(bigint, text, text) from public, anon, authenticated;

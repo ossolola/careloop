@@ -177,3 +177,6 @@ revoke all on function team_case_row(bigint) from public, anon, authenticated;
 revoke all on function team_case_detail(bigint) from public, anon, authenticated;
 revoke all on function team_can_see(text, bigint) from public, anon, authenticated;
 grant execute on function care_team(text, text, text, jsonb) to service_role;
+grant execute on function team_case_row(bigint) to service_role;
+grant execute on function team_case_detail(bigint) to service_role;
+grant execute on function team_can_see(text, bigint) to service_role;
