@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f4c4a">
+<title>CareLoop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sand: #f6f1e7;
+  --sand-deep: #ece3d2;
+  --card: #fffdf8;
+  --ink: #1d2826;
+  --ink-soft: #5b6764;
+  --teal: #0f4c4a;
+  --teal-mid: #1f6f6a;
+  --teal-wash: #e3efec;
+  --amber: #b4621a;
+  --amber-wash: #fbeedd;
+  --red: #a3322a;
+  --red-wash: #f9e4e1;
+  --line: #e2d9c8;
+  --radius: 18px;
+  --shadow: 0 1px 2px rgba(29, 40, 38, .06), 0 8px 24px -12px rgba(29, 40, 38, .18);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sand: #121a19; --sand-deep: #18221f; --card: #1b2624; --ink: #eef2ef; --ink-soft: #a6b3af;
+    --teal: #7cc8bd; --teal-mid: #5fb0a5; --teal-wash: #1f3532; --amber: #e9a35d; --amber-wash: #3a2a19;
+    --red: #f0948b; --red-wash: #3d1f1c; --line: #2b3835;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--sand);
+  background-image: radial-gradient(1200px 500px at 110% -10%, var(--teal-wash), transparent 60%);
+  color: var(--ink);
+  font: 16px/1.5 "Hanken Grotesk", system-ui, sans-serif;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+.shell { max-width: 460px; margin: 0 auto; padding: max(20px, env(safe-area-inset-top)) 16px calc(110px + env(safe-area-inset-bottom)); }
+header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: Fraunces, serif; font-weight: 650; font-size: 21px; color: var(--teal); letter-spacing: -.01em; }
+.mark { width: 30px; height: 30px; }
+.link { background: none; border: 0; color: var(--ink-soft); font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 6px; }
+h1 { font-family: Fraunces, serif; font-weight: 500; font-size: 30px; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 6px; }
+h2 { font-family: Fraunces, serif; font-weight: 500; font-size: 20px; margin: 0 0 8px; letter-spacing: -.01em; }
+.lede { color: var(--ink-soft); margin: 0 0 22px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); margin-bottom: 14px; animation: rise .45s cubic-bezier(.2,.7,.2,1) both; }
+.card:nth-of-type(2) { animation-delay: .06s; } .card:nth-of-type(3) { animation-delay: .12s; } .card:nth-of-type(4) { animation-delay: .18s; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 8px; }
+label { display: block; font-weight: 600; font-size: 14px; margin: 14px 0 6px; }
+input, textarea {
+  width: 100%; font: inherit; color: var(--ink); background: var(--sand); border: 1.5px solid var(--line);
+  border-radius: 12px; padding: 13px 14px; outline: none; transition: border-color .15s;
+}
+input:focus, textarea:focus { border-color: var(--teal-mid); }
+.btn {
+  display: block; width: 100%; border: 0; border-radius: 14px; padding: 15px 18px; margin-top: 16px;
+  font: 600 16px/1.2 "Hanken Grotesk", sans-serif; cursor: pointer; transition: transform .08s, filter .15s;
+  background: var(--teal); color: #fff;
+}
+@media (prefers-color-scheme: dark) { .btn { color: #0c1615; } }
+.btn:active { transform: scale(.985); }
+.btn:disabled { filter: grayscale(.6) opacity(.6); cursor: default; }
+.btn.ghost { background: transparent; color: var(--teal); border: 1.5px solid var(--line); }
+.btn.quiet { background: var(--teal-wash); color: var(--teal); }
+.error { background: var(--red-wash); color: var(--red); border-radius: 12px; padding: 12px 14px; margin-top: 14px; font-size: 14px; }
+.hint { font-size: 13px; color: var(--ink-soft); margin-top: 14px; }
+.hint code { background: var(--sand-deep); padding: 1px 6px; border-radius: 6px; font-size: 12.5px; }
+.message { font-size: 17px; line-height: 1.6; margin: 4px 0 12px; }
+.checked { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); border-top: 1px dashed var(--line); padding-top: 10px; }
+.checked svg { flex: none; }
+.banner { border-radius: var(--radius); padding: 14px 16px; margin-bottom: 14px; font-weight: 500; animation: rise .4s both; }
+.banner.urgent { background: var(--red-wash); color: var(--red); }
+.banner.info { background: var(--amber-wash); color: var(--amber); }
+.banner.done { background: var(--teal-wash); color: var(--teal); }
+.next { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: start; }
+.next .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--teal-wash); display: grid; place-items: center; color: var(--teal); }
+.next strong { display: block; font-size: 17px; }
+.next span { color: var(--ink-soft); font-size: 14px; }
+.deadline { display: inline-block; margin-top: 10px; background: var(--amber-wash); color: var(--amber); font-weight: 600; font-size: 13px; padding: 5px 10px; border-radius: 99px; }
+.steps { list-style: none; padding: 0; margin: 4px 0 0; position: relative; }
+.steps li { position: relative; padding: 0 0 16px 30px; color: var(--ink-soft); font-size: 15px; }
+.steps li:last-child { padding-bottom: 0; }
+.steps li::before { content: ""; position: absolute; left: 6px; top: 6px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--line); background: var(--card); }
+.steps li:not(:last-child)::after { content: ""; position: absolute; left: 11px; top: 20px; bottom: 2px; width: 2px; background: var(--line); }
+.steps li.done { color: var(--ink); }
+.steps li.done::before { background: var(--teal-mid); border-color: var(--teal-mid); }
+.steps li.done:not(:last-child)::after { background: var(--teal-mid); }
+.steps li.now { color: var(--ink); font-weight: 600; }
+.steps li.now::before { border-color: var(--amber); box-shadow: 0 0 0 4px var(--amber-wash); }
+.updates { list-style: none; padding: 0; margin: 0; }
+.updates li { padding: 12px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.updates li:first-child { border-top: 0; padding-top: 0; }
+.updates time { display: block; font-size: 12px; color: var(--ink-soft); margin-bottom: 2px; }
+.day { font-weight: 700; font-size: 13px; color: var(--ink-soft); margin: 16px 0 8px; text-transform: uppercase; letter-spacing: .06em; }
+.slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.slot { border: 1.5px solid var(--line); background: var(--card); color: var(--ink); border-radius: 12px; padding: 12px 6px; font: 600 15px "Hanken Grotesk", sans-serif; cursor: pointer; }
+.slot[aria-pressed="true"] { border-color: var(--teal); background: var(--teal-wash); color: var(--teal); }
+.slot.demo { border-style: dashed; }
+.dock { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: linear-gradient(to top, var(--sand) 70%, transparent); }
+.dock .btn { max-width: 428px; margin: 0 auto; }
+.sheet-back { position: fixed; inset: 0; background: rgba(15, 25, 24, .45); display: grid; align-items: end; z-index: 10; animation: fade .2s both; }
+@keyframes fade { from { opacity: 0; } }
+.sheet { background: var(--card); border-radius: 22px 22px 0 0; padding: 22px 18px calc(22px + env(safe-area-inset-bottom)); max-width: 460px; width: 100%; margin: 0 auto; animation: up .28s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes up { from { transform: translateY(40px); opacity: 0; } }
+.spinner { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--teal); border-radius: 50%; animation: spin .8s linear infinite; margin: 60px auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.foot { font-size: 12px; color: var(--ink-soft); text-align: center; margin-top: 24px; }
+.shell[data-anim="0"] .card, .shell[data-anim="0"] .banner { animation: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="shell" id="app"><div class="spinner" aria-label="Loading"></div></div>
+
+<script>
+// Where the app sends every request: the CareLoop 4 webhook in n8n. The app never holds a database key.
+const API_URL = 'https://nonreversing-hurly-clotilde.ngrok-free.dev/webhook/careloop/app';
+
+const state = { mrn: '', dob: '', data: null, picked: null, busy: false, error: '' };
+const $app = document.getElementById('app');
+
+const LOGO = '<svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4a12 12 0 1 0 11.3 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M22.5 6.5l5 5.5-6.8 1.6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 16.5l3.5 3.5 7-7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICONS = {
+  visit: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M12 7v4M10 9h4"/></svg>',
+  video: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg>',
+  phone: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
+  check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+};
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fmtWhen = iso => new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dubai' });
+const fmtDay = iso => new Date(iso).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Asia/Dubai' });
+const fmtTime = iso => new Date(iso).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dubai' });
+
+function remember() { try { sessionStorage.setItem('careloop', JSON.stringify({ mrn: state.mrn, dob: state.dob })); } catch (e) {} }
+function forget() { try { sessionStorage.removeItem('careloop'); } catch (e) {} }
+function recall() { try { return JSON.parse(sessionStorage.getItem('careloop') || 'null'); } catch (e) { return null; } }
+
+async function call(action, payload = {}) {
+  state.busy = true; state.error = ''; render();
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
+      body: JSON.stringify({ mrn: state.mrn, dob: state.dob, action, payload }),
+    });
+    const data = await res.json();
+    if (!data.ok) { state.error = data.error || 'Something went wrong. Please try again.'; if (action === 'home' && !state.data) forget(); }
+    else { state.data = data; state.picked = null; remember(); }
+  } catch (e) {
+    state.error = 'We could not reach CareLoop. Check your connection and try again.';
+  }
+  state.busy = false; render();
+}
+
+function headerHtml(withLogout) {
+  return `<header><div class="brand">${LOGO}CareLoop</div>${withLogout ? '<button class="link" data-act="logout">Sign out</button>' : ''}</header>`;
+}
+
+function loginView() {
+  return headerHtml(false) + `
+    <h1>Your screening follow-up</h1>
+    <p class="lede">See your results, book your appointment and get help, all in one place.</p>
+    <form class="card" id="login">
+      <label for="mrn">Record number</label>
+      <input id="mrn" name="mrn" autocomplete="off" autocapitalize="characters" placeholder="CL-0000" value="${esc(state.mrn)}" required>
+      <label for="dob">Date of birth</label>
+      <input id="dob" name="dob" type="date" value="${esc(state.dob)}" required>
+      <button class="btn" ${state.busy ? 'disabled' : ''}>${state.busy ? 'Checking…' : 'Continue'}</button>
+      ${state.error ? `<div class="error" role="alert">${esc(state.error)}</div>` : ''}
+      <p class="hint">Demo only. In a real rollout you would sign in with UAE PASS through the Sahatna app. Try <code>CL-0032</code> with <code>29 Aug 1981</code>.</p>
+    </form>
+    <p class="foot">Test data only. No real patients.</p>`;
+}
+
+function consentView(d) {
+  return headerHtml(true) + `
+    <h1>Hello${d.patient.first_name ? ', ' + esc(d.patient.first_name) : ''}</h1>
+    <p class="lede">Before we show you anything, we need your permission.</p>
+    <div class="card">
+      <div class="eyebrow">Your choice</div>
+      <h2>Can we contact you here about your screening results?</h2>
+      <p>If you say yes, your care team can send you your results, help you book a follow-up and remind you if it gets missed.</p>
+      <p>If you say no, nothing changes about your care. A member of the care team will contact you by phone or at your clinic instead.</p>
+      <p class="hint">Only your care team can see your results. You can change your mind at any time.</p>
+      <button class="btn" data-act="consent-yes" ${state.busy ? 'disabled' : ''}>Yes, contact me here</button>
+      <button class="btn ghost" data-act="consent-no" ${state.busy ? 'disabled' : ''}>No, contact me another way</button>
+      ${state.error ? `<div class="error" role="alert">${esc(state.error)}</div>` : ''}
+    </div>`;
+}
+
+function stepsHtml(c) {
+  const order = ['received', 'reviewed', 'booked', 'seen', 'done'];
+  const labels = { received: 'Results received', reviewed: 'Checked by your doctor', booked: 'Appointment booked', seen: 'Seen by your doctor', done: 'Follow-up complete' };
+  const ref = c.referral || {};
+  let reached = 'received';
+  if (c.reviewed) reached = 'reviewed';
+  if (ref.status === 'booked') reached = 'booked';
+  if (c.status === 'attended' || ref.status === 'attended') reached = 'seen';
+  if (c.status === 'closed') reached = 'done';
+  const idx = order.indexOf(reached);
+  return `<ol class="steps">${order.map((k, i) =>
+    `<li class="${i <= idx ? 'done' : i === idx + 1 ? 'now' : ''}">${labels[k]}</li>`).join('')}</ol>`;
+}
+
+function nextStepHtml(c) {
+  const ref = c.referral;
+  if (!ref) return '';
+  const icon = ref.mode === 'teleconsult' ? ICONS.video : ref.mode === 'phone' ? ICONS.phone : ICONS.visit;
+  const how = ref.mode === 'teleconsult' ? 'Video consultation' : ref.mode === 'phone' ? 'Phone call from your care team' : 'In-person appointment';
+  const where = ref.place && ref.place !== ref.to ? `${esc(ref.to)}, ${esc(ref.place)}` : esc(ref.to);
+  let body = `<div class="next"><div class="icon">${icon}</div><div><strong>${how}</strong><span>${where}</span>`;
+  if (ref.status === 'booked' && ref.appointment_text) body += `<div class="deadline" style="background:var(--teal-wash);color:var(--teal)">Booked: ${esc(ref.appointment_text)}</div>`;
+  else if (c.status !== 'closed') body += `<div class="deadline">Please book by ${esc(c.deadline)}</div>`;
+  body += `</div></div>`;
+  return `<div class="card"><div class="eyebrow">Your next step</div>${body}</div>`;
+}
+
+function slotPickerHtml(slots) {
+  const groups = {};
+  const demo = state.data.slots.length % 3 === 1 ? state.data.slots[0] : null;
+  for (const s of slots) { const k = s === demo ? 'Demo slot (a couple of minutes from now)' : fmtDay(s); (groups[k] = groups[k] || []).push(s); }
+  return `<div class="card" id="booking"><div class="eyebrow">Book your appointment</div><h2>Pick a time that works for you</h2>
+    ${Object.entries(groups).map(([day, list]) => `<div class="day">${esc(day)}</div><div class="slots">${list.map(s =>
+      `<button class="slot ${s === demo ? 'demo' : ''}" data-slot="${esc(s)}" aria-pressed="${state.picked === s}">${fmtTime(s)}</button>`).join('')}</div>`).join('')}
+    <button class="btn" data-act="book" ${!state.picked || state.busy ? 'disabled' : ''}>${state.busy ? 'Booking…' : state.picked ? 'Book ' + fmtDay(state.picked).split(',')[0] + ' at ' + fmtTime(state.picked) : 'Choose a time'}</button></div>`;
+}
+
+function homeView(d) {
+  const c = d.case;
+  let html = headerHtml(true) + `<h1>Hello${d.patient.first_name ? ', ' + esc(d.patient.first_name) : ''}</h1>`;
+  if (state.error) html += `<div class="error" role="alert">${esc(state.error)}</div>`;
+
+  if (!c) return html + `<p class="lede">You have no follow-up to do right now. We will let you know here if anything from your screening needs attention.</p>`;
+
+  if (d.patient.consent === 'rejected') {
+    html += `<div class="banner info">You chose not to get messages here. Your care team will contact you by phone or at your clinic.</div>
+      <button class="btn quiet" data-act="consent-yes">Contact me here instead</button>`;
+    return html;
+  }
+
+  if (c.status === 'closed') {
+    html += `<div class="banner done">Your follow-up is complete.</div>`;
+    if (c.outcome) html += `<div class="card"><div class="eyebrow">What your doctor recorded</div><p class="message">${esc(c.outcome)}</p></div>`;
+    return html + `<div class="card"><div class="eyebrow">Progress</div>${stepsHtml(c)}</div>`;
+  }
+
+  if (c.priority === 'P1' && c.reviewed) html += `<div class="banner urgent">This result needs attention today. If you have chest pain, a severe headache, trouble breathing or feel very unwell, call 998 now.</div>`;
+  if (c.status === 'escalated') html += `<div class="banner info">A member of your care team will contact you soon to help with this.</div>`;
+
+  if (!c.reviewed) {
+    html += `<p class="lede">Your screening results have arrived.</p>
+      <div class="card"><div class="eyebrow">In review</div><h2>Your doctor is checking your results</h2>
+      <p>We will show you what they mean and what to do next as soon as your doctor has looked at them. You do not need to do anything yet.</p></div>
+      <div class="card"><div class="eyebrow">Progress</div>${stepsHtml(c)}</div>`;
+    return html;
+  }
+
+  const result = [...c.messages].reverse().find(m => m.kind === 'result');
+  const updates = c.messages.filter(m => m.kind !== 'result');
+  if (result) html += `<div class="card"><div class="eyebrow">Your results</div><p class="message">${esc(result.body)}</p>
+      <div class="checked">${ICONS.check} Checked by your doctor · ${fmtWhen(result.sent_at)}</div></div>`;
+  html += nextStepHtml(c);
+  if (c.can_book && d.slots.length) html += slotPickerHtml(d.slots);
+
+  const ref = c.referral || {};
+  if (ref.status === 'booked' && ref.appointment_at && new Date(ref.appointment_at) < new Date())
+    html += `<div class="card"><div class="eyebrow">After your appointment</div><p>Did you go to your appointment?</p>
+      <button class="btn quiet" data-act="attended" ${state.busy ? 'disabled' : ''}>Yes, I went</button></div>`;
+
+  html += `<div class="card"><div class="eyebrow">Progress</div>${stepsHtml(c)}</div>`;
+  if (updates.length) html += `<div class="card"><div class="eyebrow">Updates</div><ul class="updates">${updates.map(m =>
+      `<li><time>${fmtWhen(m.sent_at)}</time>${esc(m.body)}</li>`).join('')}</ul></div>`;
+  html += `<div class="dock"><button class="btn ghost" data-act="help-open" style="background:var(--card)">I need help</button></div>`;
+  return html;
+}
+
+function helpSheet() {
+  return `<div class="sheet-back" id="sheet-back"><div class="sheet" role="dialog" aria-modal="true" aria-label="Ask for help">
+    <h2>How can we help?</h2>
+    <p class="hint" style="margin-top:0">Tell us what is getting in the way, for example time off work, transport or cost. Someone from your care team will call you.</p>
+    <textarea id="help-note" rows="4" maxlength="300" placeholder="Optional"></textarea>
+    <button class="btn" data-act="help-send">Ask someone to call me</button>
+    <button class="btn ghost" data-act="help-close">Cancel</button></div></div>`;
+}
+
+let sheetOpen = false;
+let lastView = '';
+function render() {
+  const d = state.data;
+  let html, view;
+  if (!d) { html = loginView(); view = 'login'; }
+  else if (d.patient.consent === 'needed') { html = consentView(d); view = 'consent'; }
+  else { html = homeView(d); view = 'home:' + (d.case ? d.case.status : 'none'); }
+  $app.dataset.anim = view === lastView ? '0' : '1';   // only animate when the screen actually changes
+  lastView = view;
+  $app.innerHTML = html + (sheetOpen ? helpSheet() : '');
+}
+
+$app.addEventListener('submit', e => {
+  if (e.target.id !== 'login') return;
+  e.preventDefault();
+  state.mrn = e.target.mrn.value.trim().toUpperCase();
+  state.dob = e.target.dob.value;
+  call('home');
+});
+
+$app.addEventListener('click', e => {
+  if (e.target.id === 'sheet-back') { sheetOpen = false; render(); return; }  // tap outside the sheet closes it
+  const slot = e.target.closest('[data-slot]');
+  if (slot) { state.picked = slot.dataset.slot; render(); document.getElementById('booking')?.scrollIntoView({ block: 'end', behavior: 'smooth' }); return; }
+  const btn = e.target.closest('[data-act]');
+  if (!btn || state.busy) return;
+  const act = btn.dataset.act;
+  const caseId = state.data?.case?.case_id;
+  if (act === 'logout') { Object.assign(state, { mrn: '', dob: '', data: null, error: '' }); forget(); render(); }
+  if (act === 'consent-yes') call('consent', { accept: true });
+  if (act === 'consent-no') call('consent', { accept: false });
+  if (act === 'book') call('book', { case_id: caseId, slot: state.picked });
+  if (act === 'attended') call('attended', { case_id: caseId });
+  if (act === 'help-open') { sheetOpen = true; render(); }
+  if (act === 'help-close') { sheetOpen = false; render(); }
+  if (act === 'help-send') { const note = document.getElementById('help-note')?.value || ''; sheetOpen = false; call('help', { case_id: caseId, note }); }
+});
+
+const saved = recall();
+if (saved && saved.mrn && saved.dob) { state.mrn = saved.mrn; state.dob = saved.dob; call('home'); } else render();
+</script>
+</body>
+</html>
