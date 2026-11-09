@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CareLoop Care Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sand: #f6f1e7; --sand-deep: #ece3d2; --card: #fffdf8; --ink: #1d2826; --ink-soft: #5b6764;
+  --teal: #0f4c4a; --teal-mid: #1f6f6a; --teal-wash: #e3efec;
+  --amber: #a85a14; --amber-wash: #fbeedd; --red: #a3322a; --red-wash: #f9e4e1;
+  --violet: #5a4a8a; --violet-wash: #ece8f6; --line: #e2d9c8; --radius: 14px;
+  --shadow: 0 1px 2px rgba(29,40,38,.06), 0 10px 30px -18px rgba(29,40,38,.25);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --sand: #111817; --sand-deep: #18221f; --card: #1a2523; --ink: #eef2ef; --ink-soft: #a6b3af;
+    --teal: #7cc8bd; --teal-mid: #5fb0a5; --teal-wash: #1f3532; --amber: #e9a35d; --amber-wash: #3a2a19;
+    --red: #f0948b; --red-wash: #3d1f1c; --violet: #b7a8e8; --violet-wash: #2a2540; --line: #2b3835;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -18px rgba(0,0,0,.7); }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--sand); color: var(--ink); font: 15px/1.45 "Hanken Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; color: inherit; }
+.mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px; }
+h1, h2, h3 { font-family: Fraunces, serif; font-weight: 500; letter-spacing: -.01em; margin: 0; }
+
+/* top bar */
+.top { display: flex; align-items: center; gap: 14px; padding: 12px 22px; border-bottom: 1px solid var(--line); background: var(--card); position: sticky; top: 0; z-index: 5; }
+.brand { display: flex; align-items: center; gap: 9px; font-family: Fraunces, serif; font-weight: 650; font-size: 19px; color: var(--teal); }
+.brand small { font-family: "Hanken Grotesk", sans-serif; font-weight: 600; font-size: 12px; color: var(--ink-soft); letter-spacing: .08em; text-transform: uppercase; margin-left: 4px; }
+.top .spacer { flex: 1; }
+.who { font-size: 13.5px; color: var(--ink-soft); text-align: right; line-height: 1.25; }
+.who strong { color: var(--ink); display: block; }
+.badge-demo { background: var(--violet-wash); color: var(--violet); font-weight: 700; font-size: 11.5px; padding: 4px 9px; border-radius: 99px; letter-spacing: .04em; }
+.iconbtn { background: none; border: 1px solid var(--line); border-radius: 10px; padding: 7px 11px; cursor: pointer; font-size: 13.5px; }
+.iconbtn:hover { background: var(--sand); }
+
+/* KPIs */
+.kpis { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; padding: 16px 22px 6px; }
+.kpi { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
+.kpi .v { font-family: Fraunces, serif; font-size: 28px; line-height: 1.1; font-weight: 500; }
+.kpi .l { font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
+.kpi.alert .v { color: var(--red); } .kpi.warn .v { color: var(--amber); } .kpi.good .v { color: var(--teal-mid); }
+
+/* layout */
+.main { display: grid; grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1.15fr); gap: 16px; padding: 12px 22px 28px; align-items: start; }
+.nav { position: sticky; top: 70px; display: flex; flex-direction: column; gap: 4px; }
+.nav button { display: flex; justify-content: space-between; align-items: center; text-align: left; background: none; border: 0; border-radius: 10px; padding: 9px 12px; cursor: pointer; font-weight: 500; color: var(--ink-soft); }
+.nav button:hover { background: var(--sand-deep); }
+.nav button.on { background: var(--teal); color: #fff; }
+@media (prefers-color-scheme: dark) { .nav button.on { color: #0c1615; } }
+.nav .count { font-size: 12px; font-weight: 700; padding: 1px 8px; border-radius: 99px; background: var(--sand-deep); color: var(--ink); }
+.nav button.on .count { background: rgba(255,255,255,.22); color: inherit; }
+.nav .count.hot { background: var(--red); color: #fff; }
+.nav hr { border: 0; border-top: 1px solid var(--line); margin: 6px 4px; }
+
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.panel-head { padding: 14px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.panel-head h2 { font-size: 18px; }
+.panel-head p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+.empty { padding: 34px 18px; text-align: center; color: var(--ink-soft); }
+
+/* case list */
+.rows { list-style: none; margin: 0; padding: 0; max-height: calc(100vh - 260px); overflow: auto; }
+.row { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); cursor: pointer; align-items: center; }
+.row:hover { background: var(--sand); }
+.row.sel { background: var(--teal-wash); }
+.row .name { font-weight: 600; }
+.row .sub { font-size: 13px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row .right { text-align: right; font-size: 12.5px; color: var(--ink-soft); }
+.pri { display: inline-grid; place-items: center; width: 34px; height: 26px; border-radius: 8px; font-weight: 700; font-size: 12.5px; }
+.pri.P1 { background: var(--red); color: #fff; } .pri.P2 { background: var(--amber-wash); color: var(--amber); }
+.pri.P3 { background: var(--teal-wash); color: var(--teal-mid); } .pri.P4 { background: var(--sand-deep); color: var(--ink-soft); }
+.chip { font-family: "Hanken Grotesk", sans-serif; letter-spacing: 0; vertical-align: middle; display: inline-block; font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 99px; background: var(--sand-deep); color: var(--ink-soft); text-transform: capitalize; }
+.chip.escalated, .chip.overdue { background: var(--red-wash); color: var(--red); }
+.chip.booked, .chip.attended { background: var(--teal-wash); color: var(--teal-mid); }
+.chip.notified, .chip.referred { background: var(--amber-wash); color: var(--amber); }
+.chip.ai { background: var(--violet-wash); color: var(--violet); text-transform: none; }
+
+/* detail */
+.detail { position: sticky; top: 70px; max-height: calc(100vh - 86px); overflow: auto; }
+.d-head { padding: 18px; border-bottom: 1px solid var(--line); }
+.d-head h2 { font-size: 23px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 16px; margin-top: 12px; font-size: 13.5px; }
+.facts dt { color: var(--ink-soft); font-size: 12px; } .facts dd { margin: 0 0 4px; font-weight: 500; }
+.sec { padding: 16px 18px; border-bottom: 1px solid var(--line); }
+.sec h3 { font-size: 15px; font-family: "Hanken Grotesk", sans-serif; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--teal-mid); margin-bottom: 10px; }
+.reason { background: var(--red-wash); color: var(--red); border-radius: 10px; padding: 10px 12px; font-weight: 500; margin-top: 12px; font-size: 14px; }
+.find { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+.msg { border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 10px; background: var(--sand); }
+.msg .meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; font-size: 12px; color: var(--ink-soft); margin-bottom: 6px; }
+.msg p { margin: 0; }
+textarea, input[type=datetime-local], input[type=password], select { width: 100%; background: var(--card); border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; outline: none; }
+textarea:focus, input:focus, select:focus { border-color: var(--teal-mid); }
+.btn { border: 0; border-radius: 10px; padding: 10px 14px; font-weight: 600; cursor: pointer; background: var(--teal); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn { color: #0c1615; } }
+.btn.ghost { background: transparent; border: 1.5px solid var(--line); color: var(--ink); }
+.btn.danger { background: transparent; border: 1.5px solid var(--red); color: var(--red); }
+.btn:disabled { opacity: .5; cursor: default; }
+.btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.act { margin-bottom: 14px; } .act label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+.lock { font-size: 13px; color: var(--ink-soft); background: var(--sand-deep); border-radius: 10px; padding: 9px 12px; }
+.tl { list-style: none; margin: 0; padding: 0; }
+.tl li { position: relative; padding: 0 0 14px 22px; font-size: 13.5px; }
+.tl li::before { content: ""; position: absolute; left: 4px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--teal-mid); }
+.tl li:not(:last-child)::after { content: ""; position: absolute; left: 8px; top: 17px; bottom: 0; width: 1px; background: var(--line); }
+.tl li.bad::before { background: var(--red); } .tl li.ai::before { background: var(--violet); } .tl li.human::before { background: var(--amber); }
+.tl time { display: block; font-size: 11.5px; color: var(--ink-soft); }
+.tl .by { color: var(--ink-soft); }
+
+/* approval cards */
+.approvals { padding: 14px; display: grid; gap: 12px; max-height: calc(100vh - 260px); overflow: auto; }
+.apc { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: var(--card); }
+.apc.mine { border-color: var(--teal-mid); box-shadow: 0 0 0 1px var(--teal-mid) inset; }
+.apc .top2 { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+.apc .note { font-size: 12.5px; color: var(--ink-soft); margin: 6px 0 0; }
+
+.toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--sand); padding: 10px 16px; border-radius: 10px; font-weight: 500; z-index: 20; animation: pop .25s both; }
+.toast.err { background: var(--red); color: #fff; }
+@keyframes pop { from { opacity: 0; transform: translate(-50%, 8px); } }
+
+/* login */
+.login { min-height: 100vh; display: grid; place-items: center; padding: 16px; background: radial-gradient(900px 500px at 85% -10%, var(--teal-wash), transparent 60%), var(--sand); }
+.login .box { width: 100%; max-width: 400px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 26px; box-shadow: var(--shadow); }
+.login h1 { font-size: 26px; margin: 14px 0 4px; }
+.login p { color: var(--ink-soft); margin: 0 0 16px; }
+.login label { display: block; font-weight: 600; font-size: 13.5px; margin: 12px 0 5px; }
+.login .btn { width: 100%; padding: 13px; margin-top: 18px; }
+.err { background: var(--red-wash); color: var(--red); border-radius: 10px; padding: 10px 12px; margin-top: 12px; font-size: 13.5px; }
+.hint { font-size: 12.5px; color: var(--ink-soft); margin-top: 14px; }
+
+.back { display: none; }
+@media (max-width: 1100px) {
+  .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .main { grid-template-columns: 190px minmax(0, 1fr); }
+  .detail { position: fixed; inset: 0; top: 0; max-height: none; border-radius: 0; z-index: 10; }
+  .detail.hidden { display: none; }
+  .back { display: inline-block; margin-bottom: 10px; }
+}
+@media (max-width: 720px) {
+  .top { padding: 10px 16px; } .who { display: none; }
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 12px 16px 4px; }
+  .main { grid-template-columns: minmax(0, 1fr); padding: 10px 16px 24px; }
+  .nav { position: static; flex-direction: row; overflow-x: auto; }
+  .nav button { white-space: nowrap; gap: 8px; } .nav hr { display: none; }
+  .rows, .approvals { max-height: none; }
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// Every request goes to the CareLoop 5 webhook in n8n. The dashboard never holds a database key.
+const API_URL = 'https://nonreversing-hurly-clotilde.ngrok-free.dev/webhook/careloop/team';
+
+const S = { staff: [], me: null, pin: '', staffId: '', ov: null, view: 'approvals', sel: null, detail: null, busy: false, loginError: '' };
+const $ = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const when = iso => iso ? new Date(iso).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dubai' }) : '';
+const LOGO = '<svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4a12 12 0 1 0 11.3 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M22.5 6.5l5 5.5-6.8 1.6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 16.5l3.5 3.5 7-7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const isDoctor = () => S.me && S.me.role === 'family-doctor';
+
+async function api(action, payload = {}, creds) {
+  const c = creds || { staff_id: S.staffId, pin: S.pin };
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': '1' },
+    body: JSON.stringify({ ...c, action, payload }),
+  });
+  return res.json();
+}
+
+function toast(text, err) {
+  document.querySelectorAll('.toast').forEach(x => x.remove());
+  const t = document.createElement('div'); t.className = 'toast' + (err ? ' err' : ''); t.textContent = text;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 3200);
+}
+
+async function loadOverview(quiet) {
+  try {
+    const r = await api('overview');
+    if (!r.ok) { if (!quiet) toast(r.error, true); return false; }
+    S.ov = r; S.me = r.me; render(); return true;
+  } catch (e) { if (!quiet) toast('Could not reach CareLoop. Is n8n running?', true); return false; }
+}
+
+async function openCase(id) {
+  S.sel = id; S.detail = null; render();
+  const r = await api('case', { case_id: id });
+  if (r.ok) { S.detail = r.case; render(); } else toast(r.error, true);
+}
+
+async function act(action, payload, okText) {
+  if (S.busy) return; S.busy = true; render();
+  try {
+    const r = await api(action, payload);
+    if (!r.ok) toast(r.error, true);
+    else { toast(okText); if (r.case && S.sel === r.case.case_id) S.detail = r.case; await loadOverview(true); }
+  } catch (e) { toast('Could not reach CareLoop.', true); }
+  S.busy = false; render();
+}
+
+/* ---------- login ---------- */
+function loginView() {
+  const doctors = S.staff.filter(s => s.role === 'family-doctor'), coords = S.staff.filter(s => s.role === 'coordinator');
+  return `<div class="login"><form class="box" id="login">
+    <div class="brand">${LOGO}CareLoop <small>Care team</small></div>
+    <h1>Sign in</h1><p>Screening follow-up for your clinic.</p>
+    <label for="staff">Your name</label>
+    <select id="staff" required><option value="">Choose…</option>
+      ${coords.length ? `<optgroup label="Screening coordinator">${coords.map(s => `<option value="${esc(s.id)}" ${s.id === S.staffId ? 'selected' : ''}>${esc(s.name)}</option>`).join('')}</optgroup>` : ''}
+      ${doctors.length ? `<optgroup label="Family doctors">${doctors.map(s => `<option value="${esc(s.id)}" ${s.id === S.staffId ? 'selected' : ''}>${esc(s.name)}</option>`).join('')}</optgroup>` : ''}
+    </select>
+    <label for="pin">PIN</label><input id="pin" type="password" inputmode="numeric" autocomplete="off" required>
+    <button class="btn" ${S.busy ? 'disabled' : ''}>${S.busy ? 'Signing in…' : 'Sign in'}</button>
+    ${S.loginError ? `<div class="err">${esc(S.loginError)}</div>` : ''}
+    <p class="hint">Demo PIN: <span class="mono">2026</span>. Sign in as Layla to see the coordinator view, or as a doctor to approve messages and close cases. A real rollout would use the clinic's staff sign-on.</p>
+  </form></div>`;
+}
+
+/* ---------- main ---------- */
+const VIEWS = [
+  ['approvals', 'Needs approval', o => o.approvals.length, true],
+  ['urgent', 'Urgent (P1)', o => o.cases.filter(c => c.priority === 'P1').length, true],
+  ['escalated', 'With coordinator', o => o.cases.filter(c => c.status === 'escalated').length, true],
+  ['overdue', 'Past deadline', o => o.cases.filter(c => c.overdue).length, true],
+  ['open', 'All open', o => o.cases.length],
+  ['closed', 'Closed', o => o.closed.length],
+  ['data', 'Data check', o => o.data_check.length, true],
+];
+function listFor(v, o) {
+  if (v === 'urgent') return o.cases.filter(c => c.priority === 'P1');
+  if (v === 'escalated') return o.cases.filter(c => c.status === 'escalated');
+  if (v === 'overdue') return o.cases.filter(c => c.overdue);
+  if (v === 'closed') return o.closed;
+  return o.cases;
+}
+
+function kpisHtml(k) {
+  const cell = (v, l, cls = '') => `<div class="kpi ${cls}"><div class="v">${v ?? '–'}</div><div class="l">${l}</div></div>`;
+  return `<div class="kpis">
+    ${cell(k.open, 'Open cases')}
+    ${cell(k.urgent, 'Urgent open', k.urgent ? 'alert' : '')}
+    ${cell(k.awaiting_approval, 'Messages to approve', k.awaiting_approval ? 'warn' : '')}
+    ${cell(k.escalated, 'With coordinator', k.escalated ? 'warn' : '')}
+    ${cell(k.overdue, 'Past deadline', k.overdue ? 'alert' : '')}
+    ${cell(k.closed + (k.lost ? ` <small style="font-size:14px;color:var(--ink-soft)">+${k.lost} lost</small>` : ''), 'Loops closed', 'good')}
+    ${cell(k.closed_on_time_pct == null ? '–' : k.closed_on_time_pct + '%', 'Closed within deadline', 'good')}
+  </div>`;
+}
+
+function rowHtml(c) {
+  const status = c.overdue && c.status !== 'escalated' ? 'overdue' : c.status;
+  return `<li class="row ${S.sel === c.case_id ? 'sel' : ''}" data-case="${c.case_id}">
+    <span class="pri ${c.priority}">${c.priority}</span>
+    <div><div class="name">${esc(c.patient)} <span class="mono" style="color:var(--ink-soft)">${esc(c.mrn)}</span></div>
+      <div class="sub">${esc(c.escalation_reason && c.status === 'escalated' ? c.escalation_reason : c.findings || '')}</div></div>
+    <div class="right"><span class="chip ${status}">${esc(status === 'overdue' ? 'past deadline' : status === 'escalated' ? 'with coordinator' : status)}</span>
+      <div style="margin-top:4px">${c.status === 'closed' || c.status === 'lost' ? 'Closed ' + when(c.closed_at) : 'Due ' + esc(c.deadline)}</div></div></li>`;
+}
+
+function approvalsHtml(o) {
+  if (!o.approvals.length) return `<div class="empty">No messages waiting for approval.</div>`;
+  return `<div class="approvals">${o.approvals.map(a => `
+    <div class="apc ${a.mine ? 'mine' : ''}">
+      <div class="top2"><span class="pri ${a.priority}">${a.priority}</span><strong>${esc(a.patient)}</strong>
+        <span class="mono" style="color:var(--ink-soft)">${esc(a.mrn)}</span>
+        ${a.drafted_by === 'gemini' ? '<span class="chip ai">Drafted by Gemini</span>' : '<span class="chip">Template</span>'}
+        ${a.mine ? '<span class="chip booked">Your patient</span>' : `<span class="chip">${esc(a.family_doctor || '')}</span>`}</div>
+      <div style="font-size:13px;color:var(--ink-soft);margin-bottom:8px">Results: ${esc(a.findings)}</div>
+      <textarea rows="5" data-body="${a.message_id}" ${isDoctor() ? '' : 'readonly'}>${esc(a.body)}</textarea>
+      <p class="note">Automatic check: ${esc(a.check_notes || 'n/a')}</p>
+      ${isDoctor() ? `<div class="btns"><button class="btn" data-approve="${a.message_id}" ${S.busy ? 'disabled' : ''}>Approve and send</button>
+        <button class="btn ghost" data-case="${a.case_id}">Open case</button></div>`
+        : `<div class="lock" style="margin-top:8px">A family doctor needs to approve this before it reaches the patient.</div>
+           <div class="btns"><button class="btn ghost" data-case="${a.case_id}">Open case</button></div>`}
+    </div>`).join('')}</div>`;
+}
+
+function dataCheckHtml(o) {
+  if (!o.data_check.length) return `<div class="empty">No results waiting for a data check.</div>`;
+  return `<ul class="rows">${o.data_check.map(d => `<li class="row" style="cursor:default">
+    <span class="pri P4">!</span>
+    <div><div class="name">${esc(d.reason.replaceAll('_', ' ').toLowerCase())}</div><div class="sub">${esc(d.detail || '')}</div></div>
+    <div class="right"><span class="mono">${esc(d.test_case_id || '#' + d.inbound_id)}</span><div style="margin-top:4px">${when(d.received_at)}</div></div></li>`).join('')}</ul>`;
+}
+
+const LABELS = {
+  'result.received': 'Result received from the lab', 'result.duplicate_ignored': 'Duplicate result ignored',
+  'case.opened': 'Case opened by the flagging rules', 'referral.created': 'Referral created',
+  'message.drafted': 'Patient message drafted', 'message.approved': 'Message approved', 'message.sent': 'Message sent to the patient',
+  'reminder.sent': 'Reminder sent', 'case.escalated': 'Handed to the coordinator', 'alert.queued': 'Coordinator alert queued',
+  'alert.sent': 'Coordinator emailed', 'alert.failed': 'Coordinator email failed', 'appointment.booked': 'Appointment booked',
+  'appointment.attended': 'Patient attended', 'appointment.missed': 'Patient missed the appointment', 'case.closed': 'Loop closed',
+  'case.lost': 'Marked lost to follow-up', 'consent.given': 'Patient agreed to app messages', 'consent.declined': 'Patient declined app messages',
+  'patient.asked_for_help': 'Patient asked for help', 'patient.reported_attended': 'Patient says they attended', 'team.note': 'Note',
+};
+function tlItem(t) {
+  const d = t.detail || {};
+  let extra = '';
+  if (t.action === 'case.opened') extra = `${d.priority}, ${d.route || ''}`.replaceAll('_', ' ');
+  if (t.action === 'message.drafted') extra = d.drafted_by === 'gemini' ? `by Gemini (${d.check_notes || ''})` : `from template (${d.check_notes || 'fixed wording'})`;
+  if (t.action === 'message.approved' && d.edited) extra = 'with edits';
+  if (t.action === 'reminder.sent') extra = d.type === 'appointment' ? 'appointment tomorrow' : `number ${d.number}`;
+  if (t.action === 'case.escalated') extra = d.reason;
+  if (t.action === 'appointment.booked') extra = when(d.appointment_at);
+  if (t.action === 'case.closed' || t.action === 'case.lost') extra = d.outcome || d.reason || '';
+  if (t.action === 'team.note' || t.action === 'patient.asked_for_help') extra = d.note ? `"${d.note}"` : '';
+  const cls = /escalated|missed|lost|failed|declined|help/.test(t.action) ? 'bad' : t.action === 'message.drafted' && d.drafted_by === 'gemini' ? 'ai'
+    : /^(dr-|coord-|patient:)/.test(t.actor) || t.actor.startsWith('Dr ') || t.actor === 'Layla Demo' ? 'human' : '';
+  const actor = t.actor.startsWith('workflow:') ? 'CareLoop ' + t.actor.split(':')[1] : t.actor.startsWith('patient:') ? 'Patient' : t.actor;
+  return `<li class="${cls}"><time>${when(t.at)}</time>${esc(LABELS[t.action] || t.action)}${extra ? ': ' + esc(extra) : ''} <span class="by">· ${esc(actor)}</span></li>`;
+}
+
+function detailHtml() {
+  const d = S.detail;
+  if (!S.sel) return `<div class="panel detail hidden"><div class="empty">Pick a case to see its full history.</div></div>`;
+  if (!d) return `<div class="panel detail"><div class="empty">Loading…</div></div>`;
+  const open = d.status !== 'closed' && d.status !== 'lost';
+  const booked = (d.referrals || []).some(r => r.status === 'booked');
+  const drafts = (d.messages || []).filter(m => m.status === 'draft' && m.kind === 'result');
+  return `<div class="panel detail">
+    <div class="d-head"><button class="iconbtn back" data-close>← Back</button>
+      <h2><span class="pri ${d.priority}">${d.priority}</span>${esc(d.patient)} <span class="chip ${d.status}">${esc(d.status === 'escalated' ? 'with coordinator' : d.status)}</span></h2>
+      <dl class="facts">
+        <div><dt>Record</dt><dd class="mono">${esc(d.mrn)}</dd></div><div><dt>Age, sex</dt><dd>${esc(d.age)}, ${esc(d.sex)}</dd></div>
+        <div><dt>Family doctor</dt><dd>${esc(d.family_doctor)}</dd></div><div><dt>Clinic</dt><dd>${esc(d.clinic)}</dd></div>
+        <div><dt>Phone</dt><dd>${esc(d.contact.phone || 'None on file')}</dd></div><div><dt>App messages</dt><dd>${d.contact.consent === 'rejected' ? 'Declined' : 'Agreed'}</dd></div>
+        <div><dt>Plan</dt><dd>${esc(d.plan)}</dd></div><div><dt>Deadline</dt><dd>${esc(d.deadline)}${d.overdue ? ' <span class="chip overdue">past</span>' : ''}</dd></div>
+      </dl>
+      ${d.status === 'escalated' && d.escalation_reason ? `<div class="reason">${esc(d.escalation_reason)}</div>` : ''}
+      ${d.outcome ? `<div class="reason" style="background:var(--teal-wash);color:var(--teal)">Outcome: ${esc(d.outcome)}</div>` : ''}
+    </div>
+    <div class="sec"><h3>Findings</h3>${(d.findings_list || []).map(f => `<div class="find"><span class="pri ${f.priority}">${f.priority}</span>${esc(f.value)} <span class="mono" style="color:var(--ink-soft)">${esc(f.rule_code)}</span></div>`).join('')}</div>
+    <div class="sec"><h3>Referral</h3>${(d.referrals || []).length ? d.referrals.map(r => `<div style="margin-bottom:6px"><strong>${esc(r.to)}</strong>, ${esc(r.mode)} <span class="chip ${r.status}">${esc(r.status)}</span>
+      ${r.appointment_at ? `<div style="font-size:13px">Appointment ${when(r.appointment_at)}</div>` : ''}<div style="font-size:12.5px;color:var(--ink-soft)">${esc(r.reason)}${r.in_network ? '' : ' · outside network'}</div></div>`).join('') : '<span style="color:var(--ink-soft)">No referral needed (advice only)</span>'}</div>
+    <div class="sec"><h3>Messages</h3>${(d.messages || []).length ? d.messages.slice().reverse().map(m => `<div class="msg"><div class="meta">
+      <span class="chip">${esc(m.kind)}</span>${m.drafted_by === 'gemini' ? '<span class="chip ai">Gemini</span>' : '<span class="chip">Template</span>'}
+      <span class="chip ${m.status === 'sent' ? 'booked' : 'notified'}">${esc(m.status)}</span>${m.approved_by ? `approved by ${esc(m.approved_by)}` : ''} ${m.sent_at ? '· ' + when(m.sent_at) : ''}</div>
+      <p>${esc(m.body)}</p></div>`).join('') : '<span style="color:var(--ink-soft)">Nothing yet</span>'}</div>
+    ${open ? `<div class="sec"><h3>Actions</h3>
+      ${drafts.length ? (isDoctor() ? `<div class="act"><label>Approve the patient message</label><textarea rows="4" data-body="${drafts[0].id}">${esc(drafts[0].body)}</textarea>
+          <div class="btns"><button class="btn" data-approve="${drafts[0].id}">Approve and send</button></div></div>`
+          : `<div class="act lock">The patient message is waiting for a family doctor to approve it.</div>`) : ''}
+      ${!booked ? `<div class="act"><label for="appt">Book on the patient's behalf (Abu Dhabi time)</label><input id="appt" type="datetime-local">
+          <div class="btns"><button class="btn ghost" data-book>Book appointment</button></div></div>` : ''}
+      ${booked ? `<div class="act"><label>Did the patient attend?</label><div class="btns"><button class="btn ghost" data-attend="yes">Attended</button><button class="btn danger" data-attend="no">Missed</button></div></div>` : ''}
+      <div class="act"><label for="note">Add a note</label><textarea id="note" rows="2" placeholder="e.g. Called, no answer. Trying again tomorrow."></textarea>
+        <div class="btns"><button class="btn ghost" data-note>Save note</button></div></div>
+      <div class="act"><label for="outcome">Close the loop</label><textarea id="outcome" rows="2" placeholder="What was done, e.g. Seen, diagnosis confirmed, treatment started."></textarea>
+        <div class="btns">${isDoctor() ? '<button class="btn" data-outcome="closed">Record outcome and close</button>' : ''}
+        <button class="btn danger" data-outcome="lost">Mark lost to follow-up</button></div>
+        ${isDoctor() ? '' : '<div class="lock" style="margin-top:8px">Only a family doctor can record the clinical outcome.</div>'}</div>
+    </div>` : ''}
+    <div class="sec" style="border-bottom:0"><h3>Timeline</h3><ul class="tl">${(d.timeline || []).map(tlItem).join('')}</ul></div>
+  </div>`;
+}
+
+function mainView() {
+  const o = S.ov;
+  const navBtns = VIEWS.map(([k, label, count, hot], i) => {
+    const n = count(o);
+    return (i === 4 ? '<hr>' : '') + `<button class="${S.view === k ? 'on' : ''}" data-view="${k}">${label}<span class="count ${hot && n ? 'hot' : ''}">${n}</span></button>`;
+  }).join('');
+  let list;
+  if (S.view === 'approvals') list = approvalsHtml(o);
+  else if (S.view === 'data') list = dataCheckHtml(o);
+  else { const l = listFor(S.view, o); list = l.length ? `<ul class="rows">${l.map(rowHtml).join('')}</ul>` : `<div class="empty">Nothing here right now.</div>`; }
+  const title = VIEWS.find(v => v[0] === S.view)[1];
+  const sub = { approvals: 'Drafts wait here until a family doctor approves them', urgent: 'Same-day action needed', escalated: 'Patients the system could not move on its own',
+    overdue: 'Deadline has passed', open: 'Every case still in the loop', closed: 'Most recent 30', data: 'Results the rules refused to guess about' }[S.view];
+  return `<div class="top"><div class="brand">${LOGO}CareLoop <small>Care team</small></div><div class="spacer"></div>
+      ${o.demo_mode ? '<span class="badge-demo">DEMO CLOCK: 1 DAY = 1 MIN</span>' : ''}
+      <div class="who"><strong>${esc(o.me.name)}</strong>${o.me.role === 'coordinator' ? 'Screening coordinator' : 'Family doctor'}</div>
+      <button class="iconbtn" data-refresh>Refresh</button><button class="iconbtn" data-logout>Sign out</button></div>
+    ${kpisHtml(o.kpis)}
+    <div class="main"><nav class="nav">${navBtns}</nav>
+      <section class="panel"><div class="panel-head"><h2>${title}</h2><p>${sub}</p></div>${list}</section>
+      ${detailHtml()}</div>`;
+}
+
+function render() {
+  const focus = document.activeElement && document.activeElement.id;
+  const typed = {}; document.querySelectorAll('textarea, input').forEach(el => { if (el.id || el.dataset.body) typed[el.id || 'b' + el.dataset.body] = el.value; });
+  $.innerHTML = S.ov ? mainView() : loginView();
+  document.querySelectorAll('textarea, input').forEach(el => { const k = el.id || 'b' + el.dataset.body; if (typed[k] !== undefined && el.type !== 'password') el.value = typed[k]; });
+  if (focus) document.getElementById(focus)?.focus();
+}
+
+$.addEventListener('submit', async e => {
+  if (e.target.id !== 'login') return;
+  e.preventDefault();
+  S.staffId = document.getElementById('staff').value; S.pin = document.getElementById('pin').value;
+  S.busy = true; S.loginError = ''; render();
+  const ok = await loadOverview(true);
+  S.busy = false;
+  if (!ok) { S.loginError = 'Name or PIN not recognised, or CareLoop is not reachable.'; S.pin = ''; }
+  render();
+});
+
+$.addEventListener('click', e => {
+  const t = e.target.closest('button, .row, [data-case]');
+  if (!t) return;
+  if (t.dataset.view) { S.view = t.dataset.view; render(); return; }
+  if (t.dataset.case && !t.dataset.approve) { openCase(Number(t.dataset.case)); return; }
+  if (t.hasAttribute('data-close')) { S.sel = null; S.detail = null; render(); return; }
+  if (t.hasAttribute('data-refresh')) { loadOverview(); if (S.sel) openCase(S.sel); return; }
+  if (t.hasAttribute('data-logout')) { Object.assign(S, { me: null, pin: '', staffId: '', ov: null, sel: null, detail: null, view: 'approvals' }); render(); return; }
+  if (t.dataset.approve) {
+    const box = document.querySelector(`[data-body="${t.dataset.approve}"]`);
+    act('approve', { message_id: Number(t.dataset.approve), body: box ? box.value : null }, 'Approved. It goes to the patient on the next run.'); return;
+  }
+  const id = S.sel;
+  if (t.hasAttribute('data-book')) {
+    const v = document.getElementById('appt').value; if (!v) return toast('Pick a date and time first.', true);
+    act('book', { case_id: id, appointment_at: v + ':00+04:00' }, 'Appointment booked.'); return;
+  }
+  if (t.dataset.attend) { act('attendance', { case_id: id, attended: t.dataset.attend === 'yes' }, t.dataset.attend === 'yes' ? 'Attendance recorded.' : 'Missed appointment recorded. Case is with the coordinator.'); return; }
+  if (t.hasAttribute('data-note')) { act('note', { case_id: id, note: document.getElementById('note').value }, 'Note saved.'); return; }
+  if (t.dataset.outcome) {
+    const text = document.getElementById('outcome').value;
+    act('outcome', { case_id: id, outcome: text, lost: t.dataset.outcome === 'lost' }, t.dataset.outcome === 'lost' ? 'Marked lost to follow-up.' : 'Loop closed.'); return;
+  }
+});
+
+setInterval(() => { if (S.ov && !S.busy && !document.querySelector('textarea:focus, input:focus')) { loadOverview(true); if (S.sel) api('case', { case_id: S.sel }).then(r => { if (r.ok) { S.detail = r.case; render(); } }); } }, 30000);
+
+(async () => {
+  render();
+  try { const r = await api('staff', {}, { staff_id: '', pin: '' }); if (r.ok) S.staff = r.staff; }
+  catch (e) { S.loginError = 'CareLoop is not reachable right now. Check that n8n is running.'; }
+  render();
+})();
+</script>
+</body>
+</html>
