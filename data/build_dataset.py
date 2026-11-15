@@ -83,7 +83,8 @@ def trim(person, n, rng, providers, case):
         patient["telecom"] = [{"system": "phone", "value": f"+971 50 000 {n:04d}"},
                               {"system": "email", "value": f"patient{n:04d}@example.com"}]
     if case and case["case_id"] == "TC41":
-        patient["birthDate"] = f"{TODAY.year - 76}-{p['birthDate'][5:]}"
+        # 15 January, so the patient is 76 for the whole of the demo and judging period
+        patient["birthDate"] = f"{TODAY.year - 76}-01-15"
         patient["meta"] = {"tag": [{"system": LOCAL, "code": "birthdate-overridden",
                                     "display": "Birth date changed to make this patient 76 for TC41"}]}
 
