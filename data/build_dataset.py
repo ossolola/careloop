@@ -82,6 +82,11 @@ def trim(person, n, rng, providers, case):
     if case is None or case["phone"] != "no":
         patient["telecom"] = [{"system": "phone", "value": f"+971 50 000 {n:04d}"},
                               {"system": "email", "value": f"patient{n:04d}@example.com"}]
+    if case and case["case_id"] == "TC16":
+        # The demo patient (CL-0032). A local name so the story and the video match what is on screen.
+        patient["name"] = [{"family": "Khaleef", "given": ["Rashid"]}]
+        patient["meta"] = {"tag": [{"system": LOCAL, "code": "name-overridden",
+                                    "display": "Name changed for the demo video (TC16)"}]}
     if case and case["case_id"] == "TC41":
         # 15 January, so the patient is 76 for the whole of the demo and judging period
         patient["birthDate"] = f"{TODAY.year - 76}-01-15"
