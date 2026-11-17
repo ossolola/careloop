@@ -177,7 +177,9 @@ begin
     v_esc := v_esc + 1;
   end loop;
 
-  -- 8. Alerts for the coordinator: every new urgent case and every escalation, once each
+  -- 8. Alerts for the coordinator: every new urgent case and every escalation.
+  --    An alert counts as done only once workflow 3 logs it as sent. If the email failed
+  --    (or the run died before logging it), it is queued again 15 minutes later, until it goes through.
   for c in
     select cs.id, cs.priority, cs.status, cs.due_at, p.mrn, cl.name as clinic,
            case when cs.status = 'escalated' then 'escalated' else 'urgent' end as alert_type,
@@ -185,9 +187,13 @@ begin
            (select string_agg(f.value_text, ', ' order by f.priority) from case_findings f where f.case_id = cs.id) as readings
       from cases cs join patients p on p.id = cs.patient_id left join clinics cl on cl.id = p.clinic_id
      where (cs.status = 'escalated'
-            and not exists (select 1 from audit_log a where a.case_id = cs.id and a.action = 'alert.queued' and a.detail->>'type' = 'escalated'))
+            and not exists (select 1 from audit_log a where a.case_id = cs.id and a.action = 'alert.sent' and a.detail->>'type' = 'escalated')
+            and not exists (select 1 from audit_log a where a.case_id = cs.id and a.action = 'alert.queued' and a.detail->>'type' = 'escalated'
+                              and a.at > now() - interval '15 minutes'))
         or (cs.priority = 'P1' and cs.status not in ('closed', 'lost', 'escalated')
-            and not exists (select 1 from audit_log a where a.case_id = cs.id and a.action = 'alert.queued' and a.detail->>'type' = 'urgent'))
+            and not exists (select 1 from audit_log a where a.case_id = cs.id and a.action = 'alert.sent' and a.detail->>'type' = 'urgent')
+            and not exists (select 1 from audit_log a where a.case_id = cs.id and a.action = 'alert.queued' and a.detail->>'type' = 'urgent'
+                              and a.at > now() - interval '15 minutes'))
   loop
     insert into audit_log (actor, action, case_id, detail)
     values ('workflow:followup', 'alert.queued', c.id, jsonb_build_object('type', c.alert_type));

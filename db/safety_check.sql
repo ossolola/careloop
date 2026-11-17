@@ -82,6 +82,17 @@ checks(n, area, check_name, ok, detail) as (
                     where a.action = 'case.closed' and coalesce(p.role, '') <> 'family-doctor'
                         and coalesce(a.detail->>'reason', '') <> 'advice-only case'), 'all closed by doctors')
 
+  union all
+  select 16, 'Patient safety', 'Every coordinator alert email was delivered',
+         not exists (select 1 from audit_log q where q.action = 'alert.queued' and q.at < now() - interval '20 minutes'
+                      and not exists (select 1 from audit_log s where s.case_id = q.case_id and s.action = 'alert.sent'
+                                        and s.detail->>'type' = q.detail->>'type')),
+         coalesce((select string_agg(distinct 'case ' || q.case_id || ' (' || (q.detail->>'type') || ')', ', ')
+                     from audit_log q where q.action = 'alert.queued' and q.at < now() - interval '20 minutes'
+                      and not exists (select 1 from audit_log s where s.case_id = q.case_id and s.action = 'alert.sent'
+                                        and s.detail->>'type' = q.detail->>'type')),
+                  'all sent') || ' (if this fails, check the Gmail credential in n8n)'
+
   -- ---------- Data ----------
   union all
   select 20, 'Data', 'Every processed result either opened a case or was logged as needing no follow-up',

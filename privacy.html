@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CareLoop privacy</title>
+<style>
+  :root { --bg: #f6f1e7; --ink: #1d2826; --soft: #5b6764; --teal: #0f4c4a; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111817; --ink: #eef2ef; --soft: #a6b3af; --teal: #7cc8bd; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { color: var(--teal); font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 28px 0 6px; }
+  p, li { margin: 0 0 10px; }
+  .muted { color: var(--soft); font-size: 14px; }
+  a { color: var(--teal); }
+</style>
+</head>
+<body>
+<main>
+  <h1>CareLoop privacy</h1>
+  <p class="muted">Last updated 17 November 2026</p>
+
+  <p>CareLoop is a prototype built by Oluwasijibomi Solola for the Future Health Digital Innovation Challenge. It shows how abnormal screening results in primary care can be followed up until the patient gets care.</p>
+
+  <h2>No real patient data</h2>
+  <p>Every patient, doctor, clinic and result in CareLoop is synthetic or made up. The test patients were generated with Synthea. CareLoop is not connected to any real health record system.</p>
+
+  <h2>What the Google sign-in is for</h2>
+  <p>CareLoop's workflows run on the builder's own n8n server. That server signs in to the builder's own Gmail account for one thing only: sending short alert emails to the screening coordinator inbox, which is also the builder's own address. It only uses permission to send email. It does not read, store or share anyone's email, contacts or Google account data, and no other Google user signs in to it.</p>
+
+  <h2>What the alert emails contain</h2>
+  <p>A record number, a clinic, a priority, a reason and a deadline. They never contain a patient's name, readings or contact details.</p>
+
+  <h2>The patient app and the dashboard</h2>
+  <p>The <a href="app/">patient app</a> and the <a href="dashboard/">care-team dashboard</a> use demo sign-ins over synthetic data. They hold no database keys. Your browser may remember your light or dark choice on your own device. Nothing else is tracked.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this page: <a href="mailto:oluwasijibomisolola@gmail.com">oluwasijibomisolola@gmail.com</a>. Source code: <a href="https://github.com/ossolola/careloop">github.com/ossolola/careloop</a>.</p>
+</main>
+</body>
+</html>
