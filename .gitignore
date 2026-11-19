@@ -21,3 +21,6 @@ Thumbs.db
 # Never commit real patient data
 data/real/
 data/synthea/
+
+#Do not post the video
+brag-output/
