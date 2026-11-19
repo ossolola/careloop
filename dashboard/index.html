@@ -64,6 +64,8 @@ h1, h2, h3 { font-family: Fraunces, serif; font-weight: 500; letter-spacing: -.0
 .panel-head { padding: 14px 16px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .panel-head h2 { font-size: 18px; }
 .panel-head p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+.search { width: 100%; margin: 0 0 10px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); font: inherit; font-size: 14px; }
+.search:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
 .empty { padding: 34px 18px; text-align: center; color: var(--ink-soft); }
 
 /* case list */
@@ -268,6 +270,14 @@ function listFor(v, o) {
   return o.cases;
 }
 
+// Search by name or record number. "cl0045", "CL-0045", "45" and "rod" all work.
+const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+function searchResults(o, q) {
+  const n = norm(q), digits = q.replace(/\D/g, '');
+  const hit = c => norm(c.patient).includes(n) || norm(c.mrn).includes(n) || (digits && c.mrn.replace(/\D/g, '').endsWith(digits.padStart(4, '0')));
+  return [...o.cases, ...o.closed].filter(hit);
+}
+
 function kpisHtml(k) {
   const cell = (v, l, cls = '') => `<div class="kpi ${cls}"><div class="v">${v ?? '–'}</div><div class="l">${l}</div></div>`;
   return `<div class="kpis">
@@ -419,19 +429,22 @@ function mainView() {
     return (i === 4 ? '<hr>' : '') + `<button class="${S.view === k ? 'on' : ''}" data-view="${k}">${label}<span class="count ${hot && n ? 'hot' : ''}">${n}</span></button>`;
   }).join('');
   let list;
-  if (S.view === 'approvals') list = approvalsHtml(o);
+  const q = (S.q || '').trim();
+  if (q) { const l = searchResults(o, q); list = l.length ? `<ul class="rows">${l.map(rowHtml).join('')}</ul>` : `<div class="empty">No patient matches "${esc(q)}".</div>`; }
+  else if (S.view === 'approvals') list = approvalsHtml(o);
   else if (S.view === 'data') list = dataCheckHtml(o);
   else { const l = listFor(S.view, o); list = l.length ? `<ul class="rows">${l.map(rowHtml).join('')}</ul>` : `<div class="empty">Nothing here right now.</div>`; }
-  const title = VIEWS.find(v => v[0] === S.view)[1];
+  const title = q ? 'Search' : VIEWS.find(v => v[0] === S.view)[1];
   const sub = { approvals: 'Drafts wait here until a family doctor approves them', urgent: 'Same-day action needed', escalated: 'Patients the system could not move on its own',
     overdue: 'Deadline has passed', open: isDoctor() ? 'Your patients still in the loop' : 'Every case still in the loop', closed: isDoctor() ? 'Your patients, most recent 30' : 'Most recent 30', data: 'Results the rules refused to guess about' }[S.view];
+  const subLine = q ? 'Open cases, plus the most recent 30 closed, matching the name or record number' : sub;
   return `<div class="top"><div class="brand">${LOGO}CareLoop <small>Care team</small></div><div class="spacer"></div>
       ${o.demo_mode ? '<span class="badge-demo">DEMO CLOCK: 1 DAY = 1 MIN</span>' : ''}
       <div class="who"><strong>${esc(o.me.name)}</strong>${o.me.role === 'coordinator' ? 'Screening coordinator' : 'Family doctor'}</div>
       ${THEME.button()}<button class="iconbtn" data-refresh>Refresh</button><button class="iconbtn" data-logout>Sign out</button></div>
     ${kpisHtml(o.kpis)}
-    <div class="main"><nav class="nav">${navBtns}</nav>
-      <section class="panel"><div class="panel-head"><h2>${title}</h2><p>${sub}</p></div>${list}</section>
+    <div class="main"><nav class="nav"><input id="q" class="search" type="search" placeholder="Search name or CL number" aria-label="Search patients by name or record number" autocomplete="off" value="${esc(S.q || '')}">${navBtns}</nav>
+      <section class="panel"><div class="panel-head"><h2>${title}</h2><p>${subLine}</p></div>${list}</section>
       ${detailHtml()}</div>`;
 }
 
@@ -439,7 +452,7 @@ function render() {
   const focus = document.activeElement && document.activeElement.id;
   const typed = {}; document.querySelectorAll('textarea, input').forEach(el => { if (el.id || el.dataset.body) typed[el.id || 'b' + el.dataset.body] = el.value; });
   $.innerHTML = S.ov ? mainView() : loginView();
-  document.querySelectorAll('textarea, input').forEach(el => { const k = el.id || 'b' + el.dataset.body; if (typed[k] !== undefined && el.type !== 'password') el.value = typed[k]; });
+  document.querySelectorAll('textarea, input').forEach(el => { const k = el.id || 'b' + el.dataset.body; if (typed[k] !== undefined && el.type !== 'password' && el.id !== 'q') el.value = typed[k]; });
   if (focus) document.getElementById(focus)?.focus();
 }
 
@@ -454,14 +467,20 @@ $.addEventListener('submit', async e => {
   render();
 });
 
+$.addEventListener('input', e => {
+  if (e.target.id !== 'q') return;
+  S.q = e.target.value; render();
+  const box = document.getElementById('q'); box.focus(); box.setSelectionRange(box.value.length, box.value.length);
+});
+
 $.addEventListener('click', e => {
   const t = e.target.closest('button, .row, [data-case]');
   if (!t) return;
-  if (t.dataset.view) { S.view = t.dataset.view; render(); return; }
+  if (t.dataset.view) { S.view = t.dataset.view; S.q = ''; render(); return; }
   if (t.dataset.case && !t.dataset.approve) { openCase(Number(t.dataset.case)); return; }
   if (t.hasAttribute('data-close')) { S.sel = null; S.detail = null; render(); return; }
   if (t.hasAttribute('data-refresh')) { loadOverview(); if (S.sel) openCase(S.sel); return; }
-  if (t.hasAttribute('data-logout')) { Object.assign(S, { me: null, pin: '', staffId: '', ov: null, sel: null, detail: null, view: 'approvals' }); render(); return; }
+  if (t.hasAttribute('data-logout')) { Object.assign(S, { me: null, pin: '', staffId: '', ov: null, sel: null, detail: null, view: 'approvals', q: '' }); render(); return; }
   if (t.dataset.approve) {
     const box = document.querySelector(`[data-body="${t.dataset.approve}"]`);
     act('approve', { message_id: Number(t.dataset.approve), body: box ? box.value : null }, 'Approved. It goes to the patient on the next run.'); return;

@@ -1,6 +1,6 @@
 # Assumptions log
 
-Notes on what I'm assuming as I build. Will tidy this into the final assumptions and limitations section before submission.
+Notes on what I assumed while building. The final version of these, with the limitations, is in [technical-documentation.md](technical-documentation.md).
 
 ## Assumptions
 
@@ -29,9 +29,12 @@ Notes on what I'm assuming as I build. Will tidy this into the final assumptions
 - FIT, cervical and mammogram results use placeholder codes. A pilot would map them to proper LOINC or SNOMED codes.
 - Lung cancer screening, full blood count, depression screening and the hearing and vision checks are left out to keep the build tight.
 
-## Still to figure out
+## Settled during the build
 
-- Who on the care team handles follow-up day to day? The DoH cancer screening standards point to a facility screening programme coordinator. Confirm with the practitioners on 14 or 15 Nov.
-- HPV-positive pathway. The DoH cervical standard points to an Appendix 1 that's empty in the published copy. Ask a clinician.
-- Submission format (hosting, source code, login). Waiting on Hack2Skill to post it. Check before 11 Nov.
-- Judges need a stable link. The ngrok address changes when it restarts, so sort out a fixed URL before submitting.
+- Who handles follow-up day to day: the facility screening coordinator, as the DoH cancer screening standards describe. In the demo that's Layla. The family doctor approves messages and records outcomes.
+- Submission format: a working prototype link, a demo video and technical documentation.
+- A stable link for judges: n8n is reached through a fixed ngrok domain, so the address no longer changes when it restarts.
+
+## Still open
+
+- HPV-positive pathway. The DoH cervical standard points to an Appendix 1 that's empty in the published copy. CareLoop refers HPV-positive results for colposcopy within 3 months, which needs a clinician to confirm.
