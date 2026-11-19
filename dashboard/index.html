@@ -344,6 +344,30 @@ function tlItem(t) {
   return `<li class="${cls}"><time>${when(t.at)}</time>${esc(LABELS[t.action] || t.action)}${extra ? ': ' + esc(extra) : ''} <span class="by">· ${esc(actor)}</span></li>`;
 }
 
+// What the case is waiting for, shown under Actions when there is no draft to approve.
+function waitingNote(d, booked) {
+  if (booked) return '';
+  const msgs = (d.messages || []).filter(m => m.kind === 'result');
+  const sent = msgs.find(m => m.status === 'sent');
+  const approved = msgs.find(m => m.status === 'approved');
+  const reminders = (d.timeline || []).filter(t => t.action === 'reminder.sent' && (t.detail || {}).type !== 'appointment').length;
+  const noApp = !d.contact.phone || d.contact.consent === 'rejected';
+  if (d.status === 'escalated')
+    return 'This case is with the coordinator. Call the patient, then book on their behalf below.';
+  if (noApp)
+    return 'The patient cannot get app messages (no phone on file or they declined). The coordinator needs to reach them and book on their behalf.';
+  if (approved && !sent)
+    return 'Approved. CareLoop sends it to the patient within a minute.';
+  if (sent && d.priority === 'P1')
+    return `Message sent ${when(sent.sent_at)}. This is urgent: the care team should call the patient today and book them in. If nothing is booked by the end of the day, the coordinator is alerted.`;
+  if (sent)
+    return `Message sent ${when(sent.sent_at)}. Waiting for the patient to book in the app. ` +
+      (reminders ? `${reminders} reminder${reminders > 1 ? 's' : ''} sent so far. ` : 'Reminders go out on day 3 and day 7. ') +
+      'If nothing is booked by day 10, the case goes to the coordinator.';
+  if (!msgs.length) return 'CareLoop is preparing the patient message. It shows up here for approval in a minute or two.';
+  return '';
+}
+
 function detailHtml() {
   const d = S.detail;
   if (!S.sel) return `<div class="panel detail hidden"><div class="empty">Pick a case to see its full history.</div></div>`;
@@ -373,7 +397,7 @@ function detailHtml() {
     ${open ? `<div class="sec"><h3>Actions</h3>
       ${drafts.length ? (isDoctor() ? `<div class="act"><label>Approve the patient message</label><textarea rows="4" data-body="${drafts[0].id}">${esc(drafts[0].body)}</textarea>
           <div class="btns"><button class="btn" data-approve="${drafts[0].id}">Approve and send</button></div></div>`
-          : `<div class="act lock">The patient message is waiting for a family doctor to approve it.</div>`) : ''}
+          : `<div class="act lock">The patient message is waiting for a family doctor to approve it.</div>`) : (waitingNote(d, booked) ? `<div class="act lock">${esc(waitingNote(d, booked))}</div>` : '')}
       ${!booked ? `<div class="act"><label for="appt">Book on the patient's behalf (Abu Dhabi time)</label><input id="appt" type="datetime-local">
           <div class="btns"><button class="btn ghost" data-book>Book appointment</button></div></div>` : ''}
       ${booked ? `<div class="act"><label>Did the patient attend?</label><div class="btns"><button class="btn ghost" data-attend="yes">Attended</button><button class="btn danger" data-attend="no">Missed</button></div></div>` : ''}
